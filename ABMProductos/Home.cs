@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ABMProductos
 {
-    public partial class Form1 : Form
+    public partial class Home : Form
     {
-        public Form1()
+        public Home()
         {
             InitializeComponent();
         }
@@ -20,6 +20,13 @@ namespace ABMProductos
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void agregarArticuloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var Agregar = new Agregar();
+            Agregar.ShowDialog();
+            
         }
     }
 }
