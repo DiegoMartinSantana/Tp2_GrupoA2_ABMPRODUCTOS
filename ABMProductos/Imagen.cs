@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ABMProductos
 {
-    internal class Imagen
+ public   internal class Imagen
     {
         public int Id { get; set; }
         public string Url { get; set; }

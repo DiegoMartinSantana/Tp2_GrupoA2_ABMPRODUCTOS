@@ -51,6 +51,8 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.cbo2 = new System.Windows.Forms.ComboBox();
             this.cbo3 = new System.Windows.Forms.ComboBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
             this.menu1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dwgArticulos)).BeginInit();
             this.SuspendLayout();
@@ -115,37 +117,37 @@
             this.otherToolStripMenuItem,
             this.otherToolStripMenuItem1});
             this.backGroundColorToolStripMenuItem.Name = "backGroundColorToolStripMenuItem";
-            this.backGroundColorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.backGroundColorToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.backGroundColorToolStripMenuItem.Text = "BackGround Color";
             // 
             // whiteToolStripMenuItem
             // 
             this.whiteToolStripMenuItem.Name = "whiteToolStripMenuItem";
-            this.whiteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.whiteToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
             this.whiteToolStripMenuItem.Text = "White";
             // 
             // otherToolStripMenuItem
             // 
             this.otherToolStripMenuItem.Name = "otherToolStripMenuItem";
-            this.otherToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.otherToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
             this.otherToolStripMenuItem.Text = "Other";
             // 
             // otherToolStripMenuItem1
             // 
             this.otherToolStripMenuItem1.Name = "otherToolStripMenuItem1";
-            this.otherToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.otherToolStripMenuItem1.Size = new System.Drawing.Size(105, 22);
             this.otherToolStripMenuItem1.Text = "Other";
             // 
             // sizeTextToolStripMenuItem
             // 
             this.sizeTextToolStripMenuItem.Name = "sizeTextToolStripMenuItem";
-            this.sizeTextToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sizeTextToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.sizeTextToolStripMenuItem.Text = "Size Text?";
             // 
             // otherToolStripMenuItem2
             // 
             this.otherToolStripMenuItem2.Name = "otherToolStripMenuItem2";
-            this.otherToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.otherToolStripMenuItem2.Size = new System.Drawing.Size(171, 22);
             this.otherToolStripMenuItem2.Text = "Other?";
             // 
             // ayudaToolStripMenuItem
@@ -153,7 +155,7 @@
             this.ayudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.comoFuncionaToolStripMenuItem});
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
             // 
             // comoFuncionaToolStripMenuItem
@@ -172,7 +174,7 @@
             // 
             // btnDetalle
             // 
-            this.btnDetalle.Location = new System.Drawing.Point(658, 432);
+            this.btnDetalle.Location = new System.Drawing.Point(658, 374);
             this.btnDetalle.Name = "btnDetalle";
             this.btnDetalle.Size = new System.Drawing.Size(75, 23);
             this.btnDetalle.TabIndex = 5;
@@ -236,12 +238,32 @@
             this.cbo3.Size = new System.Drawing.Size(121, 21);
             this.cbo3.TabIndex = 12;
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(658, 432);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 13;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(658, 403);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.TabIndex = 14;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(834, 511);
+            this.Controls.Add(this.btnModificar);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.cbo3);
             this.Controls.Add(this.cbo2);
             this.Controls.Add(this.txtBuscar);
@@ -292,6 +314,8 @@
         private System.Windows.Forms.ToolStripMenuItem comoFuncionaToolStripMenuItem;
         private System.Windows.Forms.ComboBox cbo2;
         private System.Windows.Forms.ComboBox cbo3;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnModificar;
     }
 }
 

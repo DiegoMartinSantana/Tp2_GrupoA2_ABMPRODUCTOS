@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ABMProductos
 {
-    internal class Articulo
+   public internal class Articulo
     {
         public int Id { get; set; }
         public string Codigo { get; set; }
