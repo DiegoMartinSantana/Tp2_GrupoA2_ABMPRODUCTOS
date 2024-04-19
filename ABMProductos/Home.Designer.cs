@@ -180,6 +180,7 @@
             this.btnDetalle.TabIndex = 5;
             this.btnDetalle.Text = "Ver Detalle";
             this.btnDetalle.UseVisualStyleBackColor = true;
+            this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
             // 
             // label1
             // 

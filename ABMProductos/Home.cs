@@ -28,5 +28,10 @@ namespace ABMProductos
             Agregar.ShowDialog();
             
         }
+
+        private void btnDetalle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
