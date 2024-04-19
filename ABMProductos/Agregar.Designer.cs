@@ -99,7 +99,6 @@
             this.lblUrl.Size = new System.Drawing.Size(26, 13);
             this.lblUrl.TabIndex = 4;
             this.lblUrl.Text = "Url :";
-            this.lblUrl.Click += new System.EventHandler(this.label4_Click);
             // 
             // lblMarca
             // 
@@ -224,6 +223,7 @@
             this.btnGuardar.TabIndex = 21;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // Agregar
             // 

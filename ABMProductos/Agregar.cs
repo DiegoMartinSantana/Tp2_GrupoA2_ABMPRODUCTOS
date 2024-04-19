@@ -22,8 +22,27 @@ namespace ABMProductos
 
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
+            //Carga el Articulo con los datos ingresados
+            var ArticuloAgregar = new Articulo();
+            ArticuloAgregar.Codigo = txtCodProducto.Text;
+            ArticuloAgregar.Descripcion = txtDescripcion.Text;
+            ArticuloAgregar.Precio = float.Parse(txtPrecio.Text);
+            ArticuloAgregar.Nombre = txtNombre.Text;
+            ArticuloAgregar.Marca = (Marca)cboMarca.SelectedItem;
+            ArticuloAgregar.Categoria = (Categoria)cboCategoria.SelectedItem;
+            ArticuloAgregar.Imagen = new Imagen();
+            ArticuloAgregar.Imagen.Url = txtUrlImg.Text;
+
+            //llamar a Metodo para hacer Insert en BD
+
+
+
+            MessageBox.Show("Articulo agregado correctamente");
+
+            this.Close();
+
 
         }
     }
