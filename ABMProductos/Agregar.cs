@@ -45,5 +45,10 @@ namespace ABMProductos
 
 
         }
+
+        private void txtCodProducto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

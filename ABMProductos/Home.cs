@@ -33,5 +33,16 @@ namespace ABMProductos
         {
 
         }
+
+        private void verArticulosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var Listar = new Listar();
+            Listar.ShowDialog();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

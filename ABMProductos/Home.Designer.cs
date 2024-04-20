@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.lblHome = new System.Windows.Forms.Label();
             this.menu1 = new System.Windows.Forms.MenuStrip();
@@ -53,8 +54,10 @@
             this.cbo3 = new System.Windows.Forms.ComboBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menu1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dwgArticulos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // linkLabel1
@@ -89,8 +92,9 @@
             // verArticulosToolStripMenuItem
             // 
             this.verArticulosToolStripMenuItem.Name = "verArticulosToolStripMenuItem";
-            this.verArticulosToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
-            this.verArticulosToolStripMenuItem.Text = "Ver Articulos";
+            this.verArticulosToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
+            this.verArticulosToolStripMenuItem.Text = "Listar Articulos";
+            this.verArticulosToolStripMenuItem.Click += new System.EventHandler(this.verArticulosToolStripMenuItem_Click);
             // 
             // agregarArticuloToolStripMenuItem
             // 
@@ -257,12 +261,24 @@
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ABMProductos.Properties.Resources.abmproductos_logo;
+            this.pictureBox1.Location = new System.Drawing.Point(658, 40);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(164, 115);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(834, 511);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.cbo3);
@@ -277,14 +293,17 @@
             this.Controls.Add(this.lblHome);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.menu1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menu1;
             this.MaximumSize = new System.Drawing.Size(900, 600);
             this.Name = "Home";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menu1.ResumeLayout(false);
             this.menu1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dwgArticulos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -317,6 +336,7 @@
         private System.Windows.Forms.ComboBox cbo3;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
