@@ -52,8 +52,6 @@
     <Compile Include="Agregar.Designer.cs">
       <DependentUpon>Agregar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Articulo.cs" />
-    <Compile Include="Categoria.cs" />
     <Compile Include="Detalle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,14 +64,12 @@
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="Imagen.cs" />
     <Compile Include="Listar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Listar.Designer.cs">
       <DependentUpon>Listar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Marca.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Agregar.resx">
@@ -114,6 +110,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\abmproductos_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dominio\Dominio.csproj">
+      <Project>{25799c40-c108-4265-b8e5-8630680af4aa}</Project>
+      <Name>Dominio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
