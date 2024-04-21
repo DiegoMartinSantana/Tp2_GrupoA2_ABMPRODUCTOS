@@ -54,10 +54,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(419, 540);
             this.Controls.Add(this.lstListaDeArticulos);
             this.Controls.Add(this.lblListaDeArticulos);
+            this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(435, 579);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(435, 579);
             this.Name = "Listar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista de Articulos";

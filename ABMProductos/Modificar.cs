@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace ABMProductos
 {
-    public partial class Detalle : Form
+    public partial class Modificar : Form
     {
-        public Detalle()
+        public Modificar()
         {
             InitializeComponent();
         }
-
     }
 }

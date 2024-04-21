@@ -34,15 +34,6 @@
             this.menu1 = new System.Windows.Forms.MenuStrip();
             this.verArticulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarArticuloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.opcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.backGroundColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.whiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.otherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.otherToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.sizeTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.otherToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.comoFuncionaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dwgArticulos = new System.Windows.Forms.DataGridView();
             this.btnDetalle = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -54,10 +45,10 @@
             this.cbo3 = new System.Windows.Forms.ComboBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picLogo = new System.Windows.Forms.PictureBox();
             this.menu1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dwgArticulos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // linkLabel1
@@ -81,8 +72,7 @@
             this.menu1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.menu1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.verArticulosToolStripMenuItem,
-            this.agregarArticuloToolStripMenuItem,
-            this.opcionesToolStripMenuItem});
+            this.agregarArticuloToolStripMenuItem});
             this.menu1.Location = new System.Drawing.Point(0, 0);
             this.menu1.Name = "menu1";
             this.menu1.Size = new System.Drawing.Size(834, 24);
@@ -103,71 +93,6 @@
             this.agregarArticuloToolStripMenuItem.Text = "Agregar Articulo";
             this.agregarArticuloToolStripMenuItem.Click += new System.EventHandler(this.agregarArticuloToolStripMenuItem_Click);
             // 
-            // opcionesToolStripMenuItem
-            // 
-            this.opcionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.backGroundColorToolStripMenuItem,
-            this.sizeTextToolStripMenuItem,
-            this.otherToolStripMenuItem2,
-            this.ayudaToolStripMenuItem});
-            this.opcionesToolStripMenuItem.Name = "opcionesToolStripMenuItem";
-            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
-            this.opcionesToolStripMenuItem.Text = "Opciones";
-            // 
-            // backGroundColorToolStripMenuItem
-            // 
-            this.backGroundColorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.whiteToolStripMenuItem,
-            this.otherToolStripMenuItem,
-            this.otherToolStripMenuItem1});
-            this.backGroundColorToolStripMenuItem.Name = "backGroundColorToolStripMenuItem";
-            this.backGroundColorToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.backGroundColorToolStripMenuItem.Text = "BackGround Color";
-            // 
-            // whiteToolStripMenuItem
-            // 
-            this.whiteToolStripMenuItem.Name = "whiteToolStripMenuItem";
-            this.whiteToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
-            this.whiteToolStripMenuItem.Text = "White";
-            // 
-            // otherToolStripMenuItem
-            // 
-            this.otherToolStripMenuItem.Name = "otherToolStripMenuItem";
-            this.otherToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
-            this.otherToolStripMenuItem.Text = "Other";
-            // 
-            // otherToolStripMenuItem1
-            // 
-            this.otherToolStripMenuItem1.Name = "otherToolStripMenuItem1";
-            this.otherToolStripMenuItem1.Size = new System.Drawing.Size(105, 22);
-            this.otherToolStripMenuItem1.Text = "Other";
-            // 
-            // sizeTextToolStripMenuItem
-            // 
-            this.sizeTextToolStripMenuItem.Name = "sizeTextToolStripMenuItem";
-            this.sizeTextToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.sizeTextToolStripMenuItem.Text = "Size Text?";
-            // 
-            // otherToolStripMenuItem2
-            // 
-            this.otherToolStripMenuItem2.Name = "otherToolStripMenuItem2";
-            this.otherToolStripMenuItem2.Size = new System.Drawing.Size(171, 22);
-            this.otherToolStripMenuItem2.Text = "Other?";
-            // 
-            // ayudaToolStripMenuItem
-            // 
-            this.ayudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.comoFuncionaToolStripMenuItem});
-            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.ayudaToolStripMenuItem.Text = "Ayuda";
-            // 
-            // comoFuncionaToolStripMenuItem
-            // 
-            this.comoFuncionaToolStripMenuItem.Name = "comoFuncionaToolStripMenuItem";
-            this.comoFuncionaToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.comoFuncionaToolStripMenuItem.Text = "Como Funciona?";
-            // 
             // dwgArticulos
             // 
             this.dwgArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -182,7 +107,7 @@
             this.btnDetalle.Name = "btnDetalle";
             this.btnDetalle.Size = new System.Drawing.Size(75, 23);
             this.btnDetalle.TabIndex = 5;
-            this.btnDetalle.Text = "Ver Detalle";
+            this.btnDetalle.Text = "Ver Detalles";
             this.btnDetalle.UseVisualStyleBackColor = true;
             this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
             // 
@@ -197,7 +122,7 @@
             // cbo1
             // 
             this.cbo1.FormattingEnabled = true;
-            this.cbo1.Location = new System.Drawing.Point(65, 134);
+            this.cbo1.Location = new System.Drawing.Point(56, 134);
             this.cbo1.Name = "cbo1";
             this.cbo1.Size = new System.Drawing.Size(121, 21);
             this.cbo1.TabIndex = 7;
@@ -205,7 +130,7 @@
             // lblFiltrar
             // 
             this.lblFiltrar.AutoSize = true;
-            this.lblFiltrar.Location = new System.Drawing.Point(62, 105);
+            this.lblFiltrar.Location = new System.Drawing.Point(53, 103);
             this.lblFiltrar.Name = "lblFiltrar";
             this.lblFiltrar.Size = new System.Drawing.Size(94, 13);
             this.lblFiltrar.TabIndex = 8;
@@ -214,11 +139,11 @@
             // lblBuscar
             // 
             this.lblBuscar.AutoSize = true;
-            this.lblBuscar.Location = new System.Drawing.Point(62, 65);
+            this.lblBuscar.Location = new System.Drawing.Point(53, 65);
             this.lblBuscar.Name = "lblBuscar";
-            this.lblBuscar.Size = new System.Drawing.Size(78, 13);
+            this.lblBuscar.Size = new System.Drawing.Size(81, 13);
             this.lblBuscar.TabIndex = 9;
-            this.lblBuscar.Text = "Buscar Articulo";
+            this.lblBuscar.Text = "Buscar Articulo:";
             // 
             // txtBuscar
             // 
@@ -230,7 +155,7 @@
             // cbo2
             // 
             this.cbo2.FormattingEnabled = true;
-            this.cbo2.Location = new System.Drawing.Point(228, 134);
+            this.cbo2.Location = new System.Drawing.Point(224, 134);
             this.cbo2.Name = "cbo2";
             this.cbo2.Size = new System.Drawing.Size(121, 21);
             this.cbo2.TabIndex = 11;
@@ -260,17 +185,17 @@
             this.btnModificar.TabIndex = 14;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
-            // pictureBox1
+            // picLogo
             // 
-            this.pictureBox1.Image = global::ABMProductos.Properties.Resources.abmproductos_logo;
-            this.pictureBox1.Location = new System.Drawing.Point(658, 40);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(164, 115);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.picLogo.Image = global::ABMProductos.Properties.Resources.abmproductos_logo;
+            this.picLogo.Location = new System.Drawing.Point(658, 27);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(164, 151);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogo.TabIndex = 15;
+            this.picLogo.TabStop = false;
             // 
             // Home
             // 
@@ -278,7 +203,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(834, 511);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picLogo);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.cbo3);
@@ -303,7 +228,7 @@
             this.menu1.ResumeLayout(false);
             this.menu1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dwgArticulos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -320,23 +245,14 @@
         private System.Windows.Forms.Button btnDetalle;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbo1;
-        private System.Windows.Forms.ToolStripMenuItem opcionesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem backGroundColorToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem whiteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem otherToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem otherToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem sizeTextToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem otherToolStripMenuItem2;
         private System.Windows.Forms.Label lblFiltrar;
         private System.Windows.Forms.Label lblBuscar;
         private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem comoFuncionaToolStripMenuItem;
         private System.Windows.Forms.ComboBox cbo2;
         private System.Windows.Forms.ComboBox cbo3;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picLogo;
     }
 }
 

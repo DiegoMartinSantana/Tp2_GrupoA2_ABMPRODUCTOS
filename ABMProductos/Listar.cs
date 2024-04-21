@@ -20,13 +20,6 @@ namespace ABMProductos
         private void Listar_Load(object sender, EventArgs e)
         {
             // Buscar en la base de datos los articulos y agregarlos en la lista de productos.
-            // Lo siguiente es solo un ejemplo para ver como quedaria la lista:
-
-            var articulo = new Articulo();
-            articulo.Nombre = "Computadora";
-            lstListaDeArticulos.Items.Add(articulo.Nombre);
-            articulo.Nombre = "Telefono";
-            lstListaDeArticulos.Items.Add(articulo.Nombre);
         }
     }
 }

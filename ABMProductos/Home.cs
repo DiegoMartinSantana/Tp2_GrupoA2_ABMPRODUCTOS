@@ -26,12 +26,12 @@ namespace ABMProductos
         {
             var Agregar = new Agregar();
             Agregar.ShowDialog();
-            
         }
 
         private void btnDetalle_Click(object sender, EventArgs e)
         {
-
+            var Detalle = new Detalle();
+            Detalle.ShowDialog();
         }
 
         private void verArticulosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -40,9 +40,10 @@ namespace ABMProductos
             Listar.ShowDialog();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void btnModificar_Click(object sender, EventArgs e)
         {
-
+            var Modificar = new Modificar();
+            Modificar.ShowDialog();
         }
     }
 }
