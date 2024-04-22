@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,6 @@ namespace ABMProductos
         public Marca Marca { get; set; }
         public Categoria Categoria { get; set; }
         public Imagen Imagen { get; set; }
-        public float Precio { get; set; }
+        public Decimal Precio { get; set; } //podriamos usar SqlMoney como tipo dato tambien, pero Decimal es + general
     }
 }

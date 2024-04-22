@@ -9,7 +9,11 @@ namespace ABMProductos
    public  class Marca
     {
         public int Id { get; set; }
-        public int IdArticulo { get; set; }
         public string Descripcion { get; set; }
+        //sobrescritura de to string necesaria para determinar que muestra el dvg
+        public override string ToString()
+        {
+            return Descripcion;
+        }
     }
 }

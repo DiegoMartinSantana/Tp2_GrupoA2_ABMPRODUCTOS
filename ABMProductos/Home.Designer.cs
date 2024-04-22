@@ -34,7 +34,7 @@
             this.menu1 = new System.Windows.Forms.MenuStrip();
             this.verArticulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarArticuloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dwgArticulos = new System.Windows.Forms.DataGridView();
+            this.dvgArticulos = new System.Windows.Forms.DataGridView();
             this.btnDetalle = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.cbo1 = new System.Windows.Forms.ComboBox();
@@ -47,7 +47,7 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.menu1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dwgArticulos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,17 +93,17 @@
             this.agregarArticuloToolStripMenuItem.Text = "Agregar Articulo";
             this.agregarArticuloToolStripMenuItem.Click += new System.EventHandler(this.agregarArticuloToolStripMenuItem_Click);
             // 
-            // dwgArticulos
+            // dvgArticulos
             // 
-            this.dwgArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dwgArticulos.Location = new System.Drawing.Point(56, 182);
-            this.dwgArticulos.Name = "dwgArticulos";
-            this.dwgArticulos.Size = new System.Drawing.Size(580, 273);
-            this.dwgArticulos.TabIndex = 4;
+            this.dvgArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgArticulos.Location = new System.Drawing.Point(56, 195);
+            this.dvgArticulos.Name = "dvgArticulos";
+            this.dvgArticulos.Size = new System.Drawing.Size(635, 273);
+            this.dvgArticulos.TabIndex = 4;
             // 
             // btnDetalle
             // 
-            this.btnDetalle.Location = new System.Drawing.Point(658, 374);
+            this.btnDetalle.Location = new System.Drawing.Point(708, 385);
             this.btnDetalle.Name = "btnDetalle";
             this.btnDetalle.Size = new System.Drawing.Size(75, 23);
             this.btnDetalle.TabIndex = 5;
@@ -170,7 +170,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(658, 432);
+            this.btnEliminar.Location = new System.Drawing.Point(708, 443);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 13;
@@ -179,7 +179,7 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(658, 403);
+            this.btnModificar.Location = new System.Drawing.Point(708, 414);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 14;
@@ -214,7 +214,7 @@
             this.Controls.Add(this.cbo1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDetalle);
-            this.Controls.Add(this.dwgArticulos);
+            this.Controls.Add(this.dvgArticulos);
             this.Controls.Add(this.lblHome);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.menu1);
@@ -227,7 +227,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menu1.ResumeLayout(false);
             this.menu1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dwgArticulos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgArticulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -241,7 +241,7 @@
         private System.Windows.Forms.MenuStrip menu1;
         private System.Windows.Forms.ToolStripMenuItem verArticulosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarArticuloToolStripMenuItem;
-        private System.Windows.Forms.DataGridView dwgArticulos;
+        private System.Windows.Forms.DataGridView dvgArticulos;
         private System.Windows.Forms.Button btnDetalle;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbo1;

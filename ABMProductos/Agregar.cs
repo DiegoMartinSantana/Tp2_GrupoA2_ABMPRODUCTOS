@@ -28,7 +28,7 @@ namespace ABMProductos
             var ArticuloAgregar = new Articulo();
             ArticuloAgregar.Codigo = txtCodProducto.Text;
             ArticuloAgregar.Descripcion = txtDescripcion.Text;
-            ArticuloAgregar.Precio = float.Parse(txtPrecio.Text);
+            ArticuloAgregar.Precio = decimal.Parse(txtPrecio.Text);
             ArticuloAgregar.Nombre = txtNombre.Text;
             ArticuloAgregar.Marca = (Marca)cboMarca.SelectedItem;
             ArticuloAgregar.Categoria = (Categoria)cboCategoria.SelectedItem;
