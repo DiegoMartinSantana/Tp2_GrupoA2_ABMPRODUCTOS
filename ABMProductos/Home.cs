@@ -34,8 +34,14 @@ namespace ABMProductos
 
         private void verArticulosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Detalle VentanaDetalle = new Detalle();
-            VentanaDetalle.ShowDialog();
+            var Listar = new Listar();
+            Listar.ShowDialog();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            var Modificar = new Modificar();
+            Modificar.ShowDialog();
         }
     }
 }
