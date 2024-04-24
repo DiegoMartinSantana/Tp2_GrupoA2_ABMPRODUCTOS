@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,17 @@ namespace ABMProductos
 
         private void Listar_Load(object sender, EventArgs e)
         {
-            // Buscar en la base de datos los articulos y agregarlos en la lista de productos.
+            // Cargar en dvgListaDeArticulos los datos adquiridos de la BD.
+            ArticuloGestion artGestion = new ArticuloGestion();
+            var ListArticulos = artGestion.Listado();
+            dgvListaDeArticulos.DataSource = ListArticulos;
+
+            // Ocultar columnas que no son necesarias en el listado, es solo para consultar Codigo, Nombre y Precio
+            dgvListaDeArticulos.Columns["Id"].Visible = false;
+            dgvListaDeArticulos.Columns["Descripcion"].Visible = false;
+            dgvListaDeArticulos.Columns["Marca"].Visible = false;
+            dgvListaDeArticulos.Columns["Categoria"].Visible = false;
+            dgvListaDeArticulos.Columns["Imagen"].Visible = false;
         }
     }
 }

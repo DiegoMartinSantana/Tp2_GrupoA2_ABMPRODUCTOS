@@ -35,9 +35,7 @@ namespace Negocio
 					Art.Categoria.Descripcion = (string)Acceso.Lector["CatDesc"];
 					Art.Precio = (decimal)Acceso.Lector["Precio"];
 
-
                     ListaArt.Add(Art);
-					
                 }
 				return ListaArt;
 			}
@@ -50,8 +48,6 @@ namespace Negocio
 			{
 				Acceso.cerrarConexion();
 			}
-
         }
-
     }
 }
