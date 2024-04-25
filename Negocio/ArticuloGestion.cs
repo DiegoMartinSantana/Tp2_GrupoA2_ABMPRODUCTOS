@@ -9,10 +9,33 @@ namespace Negocio
 {
     public class ArticuloGestion
     {
-       public List<Articulo> Listado()
+       AccesoBd Acceso = new AccesoBd();
+
+        public void Add(Articulo articuloAgregar)
+        {
+
+			try
+			{
+				//insertamos imagen para obtener su Id correspondiente de Imagen para asignarlo al articulo
+
+
+				
+
+				//insertamos articulo 
+
+			
+
+			}
+			catch (Exception ex)
+			{
+
+				throw ex;
+			}
+        }
+
+        public List<Articulo> Listado()
         {
 			var ListaArt = new List<Articulo>();
-			var Acceso = new AccesoBd();
 			try
 			{
 				

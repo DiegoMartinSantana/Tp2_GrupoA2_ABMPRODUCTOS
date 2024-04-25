@@ -182,6 +182,7 @@
             this.txtUrlImg.Name = "txtUrlImg";
             this.txtUrlImg.Size = new System.Drawing.Size(198, 20);
             this.txtUrlImg.TabIndex = 16;
+            this.txtUrlImg.Leave += new System.EventHandler(this.txtUrlImg_Leave);
             // 
             // txtDescripcion
             // 
