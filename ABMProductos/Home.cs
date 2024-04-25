@@ -1,5 +1,6 @@
 ﻿using Negocio;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 namespace ABMProductos
 {
@@ -9,18 +10,24 @@ namespace ABMProductos
         {
             InitializeComponent();
         }
-
+        private List<Articulo> ListArticulos;
         private void Form1_Load(object sender, EventArgs e)
         {
-            ArticuloGestion artGestion = new ArticuloGestion();
-            var ListArticulos = artGestion.Listado();
-           dvgArticulos.DataSource = ListArticulos;
+            Cargar();
+          
             //posible separacion en metodos.
             dvgArticulos.Columns["Id"].Visible = false;
             dvgArticulos.Columns["Imagen"].Visible = false;
+         
             cbo1.Items.Add("pepe");
             cbo1.Items.Add("juana");
 
+        }
+        public void Cargar()
+        {
+            ArticuloGestion artGestion = new ArticuloGestion();
+             ListArticulos = artGestion.Listado();
+            dvgArticulos.DataSource = ListArticulos;
         }
 
         private void agregarArticuloToolStripMenuItem_Click(object sender, EventArgs e)

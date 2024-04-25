@@ -49,9 +49,20 @@ namespace ABMProductos
                 ArticuloAgregar.Marca = (Marca)cboMarca.SelectedItem;
                 ArticuloAgregar.Categoria = (Categoria)cboCategoria.SelectedItem;
                 ArticuloAgregar.Imagen = new Imagen();
+
+                //validar que funcione DECIDIR SI PONE UNA GENERICA EN BD O NO DEJA CARGAR SINO
+                //-------------------------------!
+
                 ArticuloAgregar.Imagen.Url = txtUrlImg.Text;
 
-                //llamar a Metodo para hacer Insert en BD
+                //llamar a Metodo para hacer Insert ARTICULO en BD
+
+                ArtGestion.Add(ArticuloAgregar);
+
+                //llamar a metodo para hacer inserte en TABLA DE IMAGENES
+                 //-------------------------------!
+
+
 
             }
             catch (Exception )
@@ -61,7 +72,6 @@ namespace ABMProductos
                 
             }
             
-            ArtGestion.Add(ArticuloAgregar);
             
 
             MessageBox.Show("Articulo agregado correctamente");
@@ -78,6 +88,7 @@ namespace ABMProductos
 
         private void txtUrlImg_Leave(object sender, EventArgs e)
         {
+            //validar carga 
             pictureImg.ImageLocation = txtUrlImg.Text;
 
         }

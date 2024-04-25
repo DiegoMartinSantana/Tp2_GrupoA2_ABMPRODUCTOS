@@ -9,33 +9,41 @@ namespace Negocio
 {
     public class ArticuloGestion
     {
-       AccesoBd Acceso = new AccesoBd();
 
-        public void Add(Articulo articuloAgregar)
+        public void Add(Articulo Art)
         {
+            AccesoBd Acceso = new AccesoBd();
 
-			try
-			{
-				//insertamos imagen para obtener su Id correspondiente de Imagen para asignarlo al articulo
-
-
-				
-
+            try
+            {
+				Acceso.setQuery("INSERT INTO ARTICULOS (Codigo,Nombre,Descripcion,IdMarca,IdCategoria,Precio)  VALUES (@cod,@nombre,@desc,@idm,@idc,@precio)");
+				Acceso.setParametro("@cod", Art.Codigo);
+				Acceso.setParametro("@nombre",Art.Nombre);
+                Acceso.setParametro("@desc",Art.Descripcion);
+                Acceso.setParametro("@idm",Art.Marca.Id);
+                Acceso.setParametro("@idc",Art.Categoria.Id);
+				Acceso.setParametro("@precio",Art.Precio);
 				//insertamos articulo 
+				Acceso.ejecutarAccion();
 
-			
 
-			}
-			catch (Exception ex)
+            }
+            catch (Exception ex)
 			{
 
 				throw ex;
+			}
+			finally
+			{
+				Acceso.cerrarConexion();
 			}
         }
 
         public List<Articulo> Listado()
         {
-			var ListaArt = new List<Articulo>();
+            AccesoBd Acceso = new AccesoBd();
+
+            var ListaArt = new List<Articulo>();
 			try
 			{
 				

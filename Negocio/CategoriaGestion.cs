@@ -13,11 +13,11 @@ namespace Negocio
 
     public class CategoriaGestion
     {
-        AccesoBd Acceso = new AccesoBd();
         public List<Categoria> Listado()
         {
             var Lista = new List<Categoria>();
-             
+
+            AccesoBd Acceso = new AccesoBd();
 
             try
             {

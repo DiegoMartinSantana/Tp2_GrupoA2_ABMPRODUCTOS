@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Agregar));
             this.lblCodigo = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.lblImg = new System.Windows.Forms.Label();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblUrl = new System.Windows.Forms.Label();
             this.lblMarca = new System.Windows.Forms.Label();
@@ -71,16 +70,6 @@
             this.lblNombre.TabIndex = 1;
             this.lblNombre.Text = "Nombre : ";
             // 
-            // lblImg
-            // 
-            this.lblImg.AutoSize = true;
-            this.lblImg.ForeColor = System.Drawing.Color.Black;
-            this.lblImg.Location = new System.Drawing.Point(39, 317);
-            this.lblImg.Name = "lblImg";
-            this.lblImg.Size = new System.Drawing.Size(76, 13);
-            this.lblImg.TabIndex = 2;
-            this.lblImg.Text = "Imagen  o Url  ";
-            // 
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
@@ -97,9 +86,9 @@
             this.lblUrl.ForeColor = System.Drawing.Color.Black;
             this.lblUrl.Location = new System.Drawing.Point(39, 340);
             this.lblUrl.Name = "lblUrl";
-            this.lblUrl.Size = new System.Drawing.Size(26, 13);
+            this.lblUrl.Size = new System.Drawing.Size(79, 13);
             this.lblUrl.TabIndex = 4;
-            this.lblUrl.Text = "Url :";
+            this.lblUrl.Text = "Url de Imagen :";
             // 
             // lblMarca
             // 
@@ -250,7 +239,6 @@
             this.Controls.Add(this.lblMarca);
             this.Controls.Add(this.lblUrl);
             this.Controls.Add(this.lblDescripcion);
-            this.Controls.Add(this.lblImg);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblCodigo);
             this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -273,7 +261,6 @@
 
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Label lblImg;
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.Label lblUrl;
         private System.Windows.Forms.Label lblMarca;

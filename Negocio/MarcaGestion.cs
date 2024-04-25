@@ -9,11 +9,11 @@ namespace Negocio
 {
     public class MarcaGestion
     {
-        AccesoBd Acceso = new AccesoBd();   
 
         public List <Marca> Listado()
         {
-            
+        AccesoBd Acceso = new AccesoBd();
+
             var Lista = new List<Marca>();   
             try
             {
