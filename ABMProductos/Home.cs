@@ -18,6 +18,9 @@ namespace ABMProductos
             //posible separacion en metodos.
             dvgArticulos.Columns["Id"].Visible = false;
             dvgArticulos.Columns["Imagen"].Visible = false;
+            cbo1.Items.Add("pepe");
+            cbo1.Items.Add("juana");
+
         }
 
         private void agregarArticuloToolStripMenuItem_Click(object sender, EventArgs e)
@@ -42,6 +45,26 @@ namespace ABMProductos
         {
             var Modificar = new Modificar();
             Modificar.ShowDialog();
+        }
+
+        private void cbo1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            string campo = cbo1.SelectedItem.ToString();
+            if (campo == "pepe")
+            {
+                cbo2.Items.Clear();
+
+                cbo2.Items.Add("base a pepe");
+                cbo2.Items.Add("base a peep 2");
+
+            }
+            else
+            {
+                cbo2.Items.Clear();
+                cbo2.Items.Add("dakdjka");
+                cbo2.Items.Add("154");
+            }
         }
     }
 }
