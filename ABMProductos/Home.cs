@@ -14,10 +14,9 @@ namespace ABMProductos
         private void Form1_Load(object sender, EventArgs e)
         {
             Cargar();
-          
-            //posible separacion en metodos.
-            dvgArticulos.Columns["Id"].Visible = false;
-            dvgArticulos.Columns["Imagen"].Visible = false;
+
+            OcultarColumnas();
+
 
             cbo1.Items.Add("Categoria");
             cbo1.Items.Add("Precio");
@@ -28,7 +27,7 @@ namespace ABMProductos
         public void Cargar()
         {
             ArticuloGestion artGestion = new ArticuloGestion();
-             ListArticulos = artGestion.Listado();
+            ListArticulos = artGestion.Listado();
             dvgArticulos.DataSource = ListArticulos;
         }
 
@@ -86,20 +85,61 @@ namespace ABMProductos
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            var Acceso = new ArticuloGestion();
-            dvgArticulos.DataSource = Acceso.Listado();
-            string campo, criterio, filtro;
-            campo = cbo1.SelectedItem.ToString();
-            criterio = cbo2.SelectedItem.ToString();
-            filtro = txtFiltradoCriterio.Text;
-            dvgArticulos.DataSource = Acceso.FiltroCriterios(campo, criterio, filtro);
+            try
+            {
+                var Acceso = new ArticuloGestion();
+                dvgArticulos.DataSource = Acceso.Listado();
+                string campo, criterio, filtro;
+                campo = cbo1.SelectedItem.ToString();
+                criterio = cbo2.SelectedItem.ToString();
+                filtro = txtFiltradoCriterio.Text;
+                dvgArticulos.DataSource = Acceso.FiltroCriterios(campo, criterio, filtro);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Se ha producido un Error, intente nuevamente mas tarde.");
+
+            }
+
         }
 
         private void btnRefrescar_Click(object sender, EventArgs e)
         {
-           var Acceso = new ArticuloGestion();
+            var Acceso = new ArticuloGestion();
             dvgArticulos.DataSource = Acceso.Listado();
 
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            var acceso = new ArticuloGestion();
+            string filtro = txtBuscar.Text;
+
+            List<Articulo> listFiltrada;
+
+            if (filtro.Length > 3)
+            {
+                //realizo busqueda 
+                listFiltrada= ListArticulos.FindAll(Item => Item.Nombre.ToUpper().Contains(filtro.ToUpper()));  
+            }
+            else
+            {
+
+                listFiltrada = ListArticulos;
+            }
+
+            dvgArticulos.DataSource = null; // piso el valor con nulo para limpiarla
+            dvgArticulos.DataSource = listFiltrada;
+            OcultarColumnas();
+
+
+        }
+        public void OcultarColumnas()
+        {
+            dvgArticulos.Columns["Id"].Visible = false;
+            dvgArticulos.Columns["Imagen"].Visible = false;
+            dvgArticulos.Columns["Codigo"].Visible =false;
+            dvgArticulos.Columns["Descripcion"].Visible = false;
         }
     }
 }
