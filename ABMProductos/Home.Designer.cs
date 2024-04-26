@@ -103,8 +103,11 @@
             this.dvgArticulos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dvgArticulos.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dvgArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dvgArticulos.Location = new System.Drawing.Point(56, 195);
+            this.dvgArticulos.MultiSelect = false;
             this.dvgArticulos.Name = "dvgArticulos";
+            this.dvgArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dvgArticulos.Size = new System.Drawing.Size(635, 273);
             this.dvgArticulos.TabIndex = 4;
             // 
