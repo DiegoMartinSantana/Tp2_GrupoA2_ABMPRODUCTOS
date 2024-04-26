@@ -80,5 +80,115 @@ namespace Negocio
 				Acceso.cerrarConexion();
 			}
         }
+
+
+        public List<Articulo> FiltroCriterios(string campo, string criterio, string filtro)
+        {
+
+            var Acceso = new AccesoBd();
+            try
+            {
+                string query = "SELECT A.ID,A.CODIGO,A.NOMBRE,A.Descripcion,A.IdMarca,M.Descripcion MarcaDesc , A.IdCategoria,C.Descripcion CatDesc ,A.Precio FROM ARTICULOS AS A INNER JOIN MARCAS AS M ON M.Id = A.IdMarca INNER JOIN CATEGORIAS AS C ON C.Id = A.IdCategoria ";
+
+                query += " Where ";
+
+                if (campo == "Precio")
+                {
+                    if (criterio == "Mayor a :")
+                    {
+                        query += " A.Precio > " + filtro;
+                    }
+                    else if (criterio == "Menor a :")
+                    {
+                        query += "A.Precio < " + filtro;
+                    }
+                    else
+                    {
+                        query += "A.Precio = " + filtro;
+                    }
+                }
+                else
+                {
+                    if (criterio == "Contiene :")
+                    {
+                        if (campo == "Categoria")
+                        {
+                            query += " C.Descripcion LIKE '%" + filtro + "%' ";
+                        }
+                        else if (campo == "Marca")
+                        {
+                            query += " M.Descripcion LIKE '%" + filtro + "%' ";
+
+                        }
+
+                    }
+                    else if (criterio == "Termina con :")
+                    {
+                        if (campo == "Categoria")
+                        {
+                            query += " C.Descripcion LIKE '%" + filtro + "'";
+                        }
+                        else if (campo == "Marca")
+                        {
+                            query += " M.Descripcion LIKE '%" + filtro + "'";
+
+                        }
+                    }
+                    else
+                    {
+                        if (campo == "Categoria")
+                        {
+                            query += "C.Descripcion LIKE '" + filtro + "%'";
+                        }
+                        else if (campo == "Marca")
+                        {
+                            query += "M.Descripcion LIKE '" + filtro + "%'";
+
+                        }
+                    }
+
+                }
+
+                Acceso.setQuery(query);
+
+                Acceso.ejecutarLectura();
+
+                var list = new List<Articulo>();
+                while (Acceso.Lector.Read())
+                {
+
+                    var aux = new Articulo();
+                    aux.Id = (int)Acceso.Lector["Id"];
+                    aux.Codigo = (string)Acceso.Lector["Codigo"];
+                    aux.Nombre = (string)Acceso.Lector["Nombre"];
+                    aux.Descripcion = (string)Acceso.Lector["Descripcion"];
+                    aux.Precio = (decimal)Acceso.Lector["Precio"];
+                    aux.Categoria = new Categoria();
+                    aux.Categoria.Id = (int)Acceso.Lector["IdCategoria"];
+                    aux.Categoria.Descripcion = (string)Acceso.Lector["Catdesc"];
+                    aux.Marca = new Marca();
+                    aux.Marca.Id = (int)Acceso.Lector["IdMarca"];
+                    aux.Marca.Descripcion = (string)Acceso.Lector["Marcadesc"];
+
+
+                    list.Add(aux);
+
+                }
+
+                return list;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                Acceso.cerrarConexion();
+            }
+
+        }
+
+
     }
 }

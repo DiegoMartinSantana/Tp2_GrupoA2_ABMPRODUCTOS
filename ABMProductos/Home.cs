@@ -18,9 +18,11 @@ namespace ABMProductos
             //posible separacion en metodos.
             dvgArticulos.Columns["Id"].Visible = false;
             dvgArticulos.Columns["Imagen"].Visible = false;
-         
-            cbo1.Items.Add("pepe");
-            cbo1.Items.Add("juana");
+
+            cbo1.Items.Add("Categoria");
+            cbo1.Items.Add("Precio");
+            cbo1.Items.Add("Marca");
+
 
         }
         public void Cargar()
@@ -59,22 +61,45 @@ namespace ABMProductos
 
         private void cbo1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
             string campo = cbo1.SelectedItem.ToString();
-            if (campo == "pepe")
+            if (campo == "Precio")
             {
                 cbo2.Items.Clear();
 
-                cbo2.Items.Add("base a pepe");
-                cbo2.Items.Add("base a peep 2");
+                cbo2.Items.Add("Mayor a :");
+                cbo2.Items.Add("Menor a :");
+                cbo2.Items.Add("Igual :");
 
             }
             else
             {
                 cbo2.Items.Clear();
-                cbo2.Items.Add("dakdjka");
-                cbo2.Items.Add("154");
+
+                cbo2.Items.Add("Contiene :");
+                cbo2.Items.Add("Termina con :");
+                cbo2.Items.Add("Empieza con :");
+
             }
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            var Acceso = new ArticuloGestion();
+            dvgArticulos.DataSource = Acceso.Listado();
+            string campo, criterio, filtro;
+            campo = cbo1.SelectedItem.ToString();
+            criterio = cbo2.SelectedItem.ToString();
+            filtro = txtFiltradoCriterio.Text;
+            dvgArticulos.DataSource = Acceso.FiltroCriterios(campo, criterio, filtro);
+        }
+
+        private void btnRefrescar_Click(object sender, EventArgs e)
+        {
+           var Acceso = new ArticuloGestion();
+            dvgArticulos.DataSource = Acceso.Listado();
+
         }
     }
 }

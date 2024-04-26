@@ -43,11 +43,13 @@
             this.lblBuscar = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.cbo2 = new System.Windows.Forms.ComboBox();
-            this.cbo3 = new System.Windows.Forms.ComboBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.btnRefrescar = new System.Windows.Forms.Button();
+            this.txtFiltradoCriterio = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.menu1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -131,6 +133,7 @@
             // 
             // cbo1
             // 
+            this.cbo1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbo1.FormattingEnabled = true;
             this.cbo1.Location = new System.Drawing.Point(56, 134);
             this.cbo1.Name = "cbo1";
@@ -158,7 +161,7 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(162, 58);
+            this.txtBuscar.Location = new System.Drawing.Point(161, 65);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(271, 20);
             this.txtBuscar.TabIndex = 10;
@@ -170,14 +173,6 @@
             this.cbo2.Name = "cbo2";
             this.cbo2.Size = new System.Drawing.Size(121, 21);
             this.cbo2.TabIndex = 11;
-            // 
-            // cbo3
-            // 
-            this.cbo3.FormattingEnabled = true;
-            this.cbo3.Location = new System.Drawing.Point(402, 134);
-            this.cbo3.Name = "cbo3";
-            this.cbo3.Size = new System.Drawing.Size(121, 21);
-            this.cbo3.TabIndex = 12;
             // 
             // btnEliminar
             // 
@@ -214,16 +209,47 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // btnRefrescar
+            // 
+            this.btnRefrescar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnRefrescar.Location = new System.Drawing.Point(697, 195);
+            this.btnRefrescar.Name = "btnRefrescar";
+            this.btnRefrescar.Size = new System.Drawing.Size(75, 23);
+            this.btnRefrescar.TabIndex = 16;
+            this.btnRefrescar.Text = "Refresh";
+            this.btnRefrescar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnRefrescar.UseVisualStyleBackColor = true;
+            this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
+            // 
+            // txtFiltradoCriterio
+            // 
+            this.txtFiltradoCriterio.Location = new System.Drawing.Point(383, 134);
+            this.txtFiltradoCriterio.Name = "txtFiltradoCriterio";
+            this.txtFiltradoCriterio.Size = new System.Drawing.Size(100, 20);
+            this.txtFiltradoCriterio.TabIndex = 17;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(532, 134);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 18;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(834, 511);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.txtFiltradoCriterio);
+            this.Controls.Add(this.btnRefrescar);
             this.Controls.Add(this.picLogo);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.cbo3);
             this.Controls.Add(this.cbo2);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.lblBuscar);
@@ -261,16 +287,18 @@
         private System.Windows.Forms.DataGridView dvgArticulos;
         private System.Windows.Forms.Button btnDetalle;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbo1;
         private System.Windows.Forms.Label lblFiltrar;
         private System.Windows.Forms.Label lblBuscar;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.ComboBox cbo2;
-        private System.Windows.Forms.ComboBox cbo3;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Button btnRefrescar;
+        private System.Windows.Forms.TextBox txtFiltradoCriterio;
+        private System.Windows.Forms.Button btnBuscar;
+        public System.Windows.Forms.ComboBox cbo1;
     }
 }
 
