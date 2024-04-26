@@ -38,7 +38,10 @@ namespace ABMProductos
 
         private void btnDetalle_Click(object sender, EventArgs e)
         {
-            var Detalle = new Detalle();
+            Articulo seleccionado;
+            seleccionado = (Articulo)dvgArticulos.CurrentRow.DataBoundItem;
+
+            var Detalle = new Detalle(seleccionado);
             Detalle.ShowDialog();
         }
 
