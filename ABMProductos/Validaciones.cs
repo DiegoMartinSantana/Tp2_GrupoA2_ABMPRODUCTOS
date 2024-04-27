@@ -11,10 +11,10 @@ namespace ABMProductos
     {
 
 
-          public static bool ValidarTextBoxes(List<TextBox> textBoxes)
+          public static bool ValidarTextBoxes(List<Control> textBoxes)
     {
           
-        foreach (TextBox textBox in textBoxes)
+        foreach (Control textBox in textBoxes)
         {
             if (string.IsNullOrEmpty(textBox.Text)) 
             {

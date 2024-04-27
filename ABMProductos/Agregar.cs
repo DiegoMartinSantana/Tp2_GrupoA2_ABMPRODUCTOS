@@ -38,13 +38,15 @@ namespace ABMProductos
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            List<TextBox> list = new List<TextBox>(); // creo una lista de textbox para agregarle los textboxes que corresponda y luego llamar a la funcion
+            List<Control> list = new List<Control>(); // creo una lista de textbox para agregarle los textboxes que corresponda y luego llamar a la funcion
                                                       // que valida que los textboxes no contengan valores nulos
                                                       
             list.Add(txtCodProducto);
             list.Add(txtDescripcion);
             list.Add(txtPrecio);
             list.Add(txtNombre);
+            list.Add(cboCategoria);
+            list.Add(cboMarca);
           
 
             ArticuloGestion ArtGestion = new ArticuloGestion();
