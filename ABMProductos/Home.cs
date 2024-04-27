@@ -33,8 +33,12 @@ namespace ABMProductos
 
         private void agregarArticuloToolStripMenuItem_Click(object sender, EventArgs e)
         {
+        }
+        private void articuloiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             var Agregar = new Agregar();
             Agregar.ShowDialog();
+
         }
 
         private void btnDetalle_Click(object sender, EventArgs e)
@@ -140,5 +144,7 @@ namespace ABMProductos
             dvgArticulos.Columns["Codigo"].Visible =false;
             dvgArticulos.Columns["Descripcion"].Visible = false;
         }
+
+      
     }
 }
