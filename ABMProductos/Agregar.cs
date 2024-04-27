@@ -34,6 +34,15 @@ namespace ABMProductos
             cboMarca.DisplayMember = "Descripcion";
             cboMarca.ValueMember = "Id";
 
+        
+        }
+
+        public void control(object e)
+        {
+            if(e is ComboBox)
+            {
+
+            }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -76,11 +85,11 @@ namespace ABMProductos
                 MessageBox.Show("Se ha añadido el Articulo correctamente.");
 
             }
-            catch (Exception)
+            catch (Exception )
             {
                 MessageBox.Show("Ha ocurrido un Error, intente nuevamente mas tarde.");
                 this.Close();
-
+               
             }
 
 

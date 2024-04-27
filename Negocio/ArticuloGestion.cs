@@ -47,7 +47,7 @@ namespace Negocio
 			try
 			{
 				
-				Acceso.setQuery(" SELECT A.ID,A.CODIGO,A.NOMBRE,A.Descripcion,A.IdMarca,M.Descripcion MarcaDesc , A.IdCategoria,C.Descripcion CatDesc ,A.Precio FROM ARTICULOS AS A INNER JOIN MARCAS AS M ON M.Id = A.IdMarca INNER JOIN CATEGORIAS AS C ON C.Id = A.IdCategoria ORDER BY A.Nombre");
+				Acceso.setQuery(" SELECT A.ID,A.CODIGO,A.NOMBRE,A.Descripcion,A.IdMarca,M.Descripcion MarcaDesc , A.IdCategoria,C.Descripcion CatDesc ,A.Precio FROM ARTICULOS AS A INNER JOIN MARCAS AS M ON M.Id = A.IdMarca INNER JOIN CATEGORIAS AS C ON C.Id = A.IdCategoria ");
 				Acceso.ejecutarLectura();
 
 				while(Acceso.Lector.Read())
