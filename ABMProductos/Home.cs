@@ -58,7 +58,10 @@ namespace ABMProductos
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            var Modificar = new Modificar();
+            Articulo seleccionado;
+            seleccionado = (Articulo)dvgArticulos.CurrentRow.DataBoundItem;
+
+            var Modificar = new Modificar(seleccionado);
             Modificar.ShowDialog();
         }
 

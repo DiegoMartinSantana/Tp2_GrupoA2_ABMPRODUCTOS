@@ -60,6 +60,7 @@
             this.btnGuardar.TabIndex = 39;
             this.btnGuardar.Text = "Modificar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // cboCategoria
             // 
@@ -118,11 +119,11 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(145, 25);
+            this.label8.Location = new System.Drawing.Point(90, 24);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(137, 13);
+            this.label8.Size = new System.Drawing.Size(234, 13);
             this.label8.TabIndex = 31;
-            this.label8.Text = "COMPLETE LOS CAMPOS";
+            this.label8.Text = "SOBREESCRIBA LOS CAMPOS A MODIFICAR";
             // 
             // pictureImg
             // 
@@ -246,6 +247,7 @@
             this.Name = "Modificar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar";
+            this.Load += new System.EventHandler(this.Modificar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureImg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
