@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,7 +18,8 @@ namespace ABMProductos
             InitializeComponent();
         }
 
-        
+
+        List<string> listUrlAdd;
 
         private void Agregar_Load(object sender, EventArgs e)
         {
@@ -48,49 +50,87 @@ namespace ABMProductos
                 ArticuloAgregar.Nombre = txtNombre.Text;
                 ArticuloAgregar.Marca = (Marca)cboMarca.SelectedItem;
                 ArticuloAgregar.Categoria = (Categoria)cboCategoria.SelectedItem;
-                ArticuloAgregar.Imagen = new Imagen();
 
-                //validar que funcione DECIDIR SI PONE UNA GENERICA EN BD O NO DEJA CARGAR SINO
+
                 //-------------------------------!
 
-                ArticuloAgregar.Imagen.Url = txtUrlImg.Text;
 
                 //llamar a Metodo para hacer Insert ARTICULO en BD
 
+
+                //metodo para validar ARTICULO ENTERO + EXISTENCIA DE UNA IMAGEN AL MENOS.
+
                 ArtGestion.Add(ArticuloAgregar);
 
+
+                var UltimoInsertado = ArtGestion.Listado().Last(); // obtenemos ultimo insertado
+
+
                 //llamar a metodo para hacer inserte en TABLA DE IMAGENES
-                 //-------------------------------!
+                //-------------------------------!
+                var ImgGestion = new ImagenGestion();
+                var Img = new Imagen() { IdArticulo = UltimoInsertado.Id, UrlImagen = txtUrlImg.Text };
 
+                ImgGestion.Add(Img);
 
+                MessageBox.Show("Se ha añadido el Articulo correctamente.");
 
             }
-            catch (Exception )
+            catch (Exception)
             {
                 MessageBox.Show("Ha ocurrido un Error, intente nuevamente mas tarde.");
                 this.Close();
-                
-            }
-            
-            
 
-            MessageBox.Show("Articulo agregado correctamente");
+            }
+
+
+
 
             this.Close();
 
-
         }
 
-        private void txtCodProducto_TextChanged(object sender, EventArgs e)
+        public void CargarImagenes()
         {
 
-        }
+            //llena la lista con el id correspondiente una vez se guardo correctamente
+            var listImgs = new List<Imagen>();
+            var artGestion = new ArticuloGestion();
+            var imgGestion = new ImagenGestion();
+            foreach (var url in listUrlAdd)
+            {
+                var imgAux = new Imagen();
+                imgAux.UrlImagen = url;
+                imgAux.IdArticulo = artGestion.Listado().Last().Id; //accede al ultimo id insertado!
 
+                listImgs.Add(imgAux);   
+
+                imgGestion.Add(imgAux); // añadimos x cada vuelta la imagen a la BD.
+
+            }
+
+
+        }
         private void txtUrlImg_Leave(object sender, EventArgs e)
         {
-            //validar carga 
-            pictureImg.ImageLocation = txtUrlImg.Text;
+            try
+            {
+                lblErrorImg.Visible = false;
 
+                pictureImg.Load(txtUrlImg.Text);
+
+                listUrlAdd = new List<string> (); 
+
+                listUrlAdd.Add(txtUrlImg.Text); // cada vez que inserta una imagen correctamente, se añade al listado de strings su url.
+
+            }
+            catch (Exception)
+            {
+                lblErrorImg.Visible = true;
+                MessageBox.Show("La url proporcionada no se ha podido cargar.");
+            }
         }
     }
+
+
 }

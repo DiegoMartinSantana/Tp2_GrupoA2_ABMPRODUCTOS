@@ -137,7 +137,6 @@ namespace ABMProductos
         public void OcultarColumnas()
         {
             dvgArticulos.Columns["Id"].Visible = false;
-            dvgArticulos.Columns["Imagen"].Visible = false;
             dvgArticulos.Columns["Codigo"].Visible =false;
             dvgArticulos.Columns["Descripcion"].Visible = false;
         }

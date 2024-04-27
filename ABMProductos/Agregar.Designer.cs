@@ -47,6 +47,7 @@
             this.cboMarca = new System.Windows.Forms.ComboBox();
             this.cboCategoria = new System.Windows.Forms.ComboBox();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.lblErrorImg = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureImg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -126,6 +127,7 @@
             this.pictureImg.Location = new System.Drawing.Point(42, 370);
             this.pictureImg.Name = "pictureImg";
             this.pictureImg.Size = new System.Drawing.Size(231, 129);
+            this.pictureImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureImg.TabIndex = 8;
             this.pictureImg.TabStop = false;
             // 
@@ -156,7 +158,6 @@
             this.txtCodProducto.Name = "txtCodProducto";
             this.txtCodProducto.Size = new System.Drawing.Size(100, 20);
             this.txtCodProducto.TabIndex = 11;
-            this.txtCodProducto.TextChanged += new System.EventHandler(this.txtCodProducto_TextChanged);
             // 
             // txtPrecio
             // 
@@ -217,12 +218,26 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // lblErrorImg
+            // 
+            this.lblErrorImg.AutoSize = true;
+            this.lblErrorImg.BackColor = System.Drawing.Color.Transparent;
+            this.lblErrorImg.Font = new System.Drawing.Font("Microsoft Tai Le", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorImg.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorImg.Location = new System.Drawing.Point(356, 333);
+            this.lblErrorImg.Name = "lblErrorImg";
+            this.lblErrorImg.Size = new System.Drawing.Size(20, 25);
+            this.lblErrorImg.TabIndex = 22;
+            this.lblErrorImg.Text = "*";
+            this.lblErrorImg.Visible = false;
+            // 
             // Agregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(419, 540);
+            this.Controls.Add(this.lblErrorImg);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.cboCategoria);
             this.Controls.Add(this.cboMarca);
@@ -277,5 +292,6 @@
         private System.Windows.Forms.ComboBox cboMarca;
         private System.Windows.Forms.ComboBox cboCategoria;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Label lblErrorImg;
     }
 }

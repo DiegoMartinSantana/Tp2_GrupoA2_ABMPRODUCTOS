@@ -11,6 +11,6 @@ namespace ABMProductos
         public int Id { get; set; }
         public int IdArticulo { get; set; }
 
-        public string Url { get; set; }
+        public string UrlImagen { get; set; }
     }
 }
