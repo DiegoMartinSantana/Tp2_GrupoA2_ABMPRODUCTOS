@@ -47,9 +47,24 @@ namespace ABMProductos
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            List<Control> list = new List<Control>(); // creo una lista de textbox para agregarle los textboxes que corresponda y luego llamar a la funcion
+                                                      // que valida que los textboxes no contengan valores nulos
+                                                      
+            list.Add(txtCodProducto);
+            list.Add(txtDescripcion);
+            list.Add(txtPrecio);
+            list.Add(txtNombre);
+            list.Add(cboCategoria);
+            list.Add(cboMarca);
+          
+
             ArticuloGestion ArtGestion = new ArticuloGestion();
             var ArticuloAgregar = new Articulo();
 
+            if (Validaciones.ValidarTextBoxes(list))
+            {
+
+  
             try
             {
                 //Carga el Articulo con los datos ingresados
@@ -91,7 +106,7 @@ namespace ABMProductos
                 this.Close();
                
             }
-
+            }
 
 
 
