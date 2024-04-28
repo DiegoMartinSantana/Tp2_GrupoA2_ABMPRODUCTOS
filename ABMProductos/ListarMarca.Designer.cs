@@ -51,7 +51,7 @@
             this.lblListaDeMarcas.Location = new System.Drawing.Point(145, 23);
             this.lblListaDeMarcas.Name = "lblListaDeMarcas";
             this.lblListaDeMarcas.Size = new System.Drawing.Size(118, 13);
-            this.lblListaDeMarcas.TabIndex = 4;
+            this.lblListaDeMarcas.TabIndex = 6;
             this.lblListaDeMarcas.Text = "LISTA DE MARCAS";
             // 
             // btnModificar
@@ -60,7 +60,7 @@
             this.btnModificar.Location = new System.Drawing.Point(302, 309);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
-            this.btnModificar.TabIndex = 16;
+            this.btnModificar.TabIndex = 2;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -72,7 +72,7 @@
             this.lblVacioModificar.Location = new System.Drawing.Point(169, 421);
             this.lblVacioModificar.Name = "lblVacioModificar";
             this.lblVacioModificar.Size = new System.Drawing.Size(97, 13);
-            this.lblVacioModificar.TabIndex = 26;
+            this.lblVacioModificar.TabIndex = 10;
             this.lblVacioModificar.Text = "Ingrese un Nombre";
             this.lblVacioModificar.Visible = false;
             // 
@@ -82,7 +82,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(302, 422);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 25;
+            this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Visible = false;
@@ -94,7 +94,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(302, 393);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardar.TabIndex = 23;
+            this.btnGuardar.TabIndex = 4;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Visible = false;
@@ -107,7 +107,7 @@
             this.lblNombre.Location = new System.Drawing.Point(42, 396);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(121, 13);
-            this.lblNombre.TabIndex = 22;
+            this.lblNombre.TabIndex = 9;
             this.lblNombre.Text = "Ingrese nuevo Nombre :";
             this.lblNombre.Visible = false;
             // 
@@ -116,7 +116,7 @@
             this.txtNombre.Location = new System.Drawing.Point(169, 393);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(127, 20);
-            this.txtNombre.TabIndex = 21;
+            this.txtNombre.TabIndex = 1;
             this.txtNombre.Visible = false;
             // 
             // lblInfo1
@@ -126,7 +126,7 @@
             this.lblInfo1.Location = new System.Drawing.Point(42, 93);
             this.lblInfo1.Name = "lblInfo1";
             this.lblInfo1.Size = new System.Drawing.Size(168, 13);
-            this.lblInfo1.TabIndex = 20;
+            this.lblInfo1.TabIndex = 7;
             this.lblInfo1.Text = "Estas son sus Marcas disponibles ";
             // 
             // lblInfo2
@@ -136,7 +136,7 @@
             this.lblInfo2.Location = new System.Drawing.Point(42, 135);
             this.lblInfo2.Name = "lblInfo2";
             this.lblInfo2.Size = new System.Drawing.Size(206, 13);
-            this.lblInfo2.TabIndex = 19;
+            this.lblInfo2.TabIndex = 8;
             this.lblInfo2.Text = " Seleccione una para realizar una accion .";
             // 
             // btnEliminar
@@ -145,7 +145,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(302, 338);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 15;
+            this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -164,7 +164,7 @@
             this.dgvListaDeMarcas.Name = "dgvListaDeMarcas";
             this.dgvListaDeMarcas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaDeMarcas.Size = new System.Drawing.Size(251, 196);
-            this.dgvListaDeMarcas.TabIndex = 5;
+            this.dgvListaDeMarcas.TabIndex = 0;
             // 
             // frmListarMarca
             // 

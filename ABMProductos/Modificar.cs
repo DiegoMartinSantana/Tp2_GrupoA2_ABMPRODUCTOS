@@ -23,7 +23,6 @@ namespace ABMProductos
             InitializeComponent();
             this.articulo = articulo;
         }
-
         private void Modificar_Load(object sender, EventArgs e)
         {
             CategoriaGestion CatGestion = new CategoriaGestion();
@@ -86,7 +85,7 @@ namespace ABMProductos
 
                 ImgGestion.Add(Img);
 
-                MessageBox.Show("Articulo modificado");
+                MessageBox.Show("Se ha modificado el articulo correctamente","Modificacion exitosa",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -99,7 +98,6 @@ namespace ABMProductos
                 this.Close();
             }
 
-            
         }
     }
 }

@@ -58,7 +58,7 @@
             this.lblCodigo.Location = new System.Drawing.Point(39, 44);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(107, 13);
-            this.lblCodigo.TabIndex = 0;
+            this.lblCodigo.TabIndex = 9;
             this.lblCodigo.Text = "Codigo de Producto :";
             // 
             // lblNombre
@@ -68,7 +68,7 @@
             this.lblNombre.Location = new System.Drawing.Point(39, 80);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(53, 13);
-            this.lblNombre.TabIndex = 1;
+            this.lblNombre.TabIndex = 10;
             this.lblNombre.Text = "Nombre : ";
             // 
             // lblDescripcion
@@ -78,7 +78,7 @@
             this.lblDescripcion.Location = new System.Drawing.Point(39, 121);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(69, 13);
-            this.lblDescripcion.TabIndex = 3;
+            this.lblDescripcion.TabIndex = 11;
             this.lblDescripcion.Text = "Descripcion :";
             // 
             // lblUrl
@@ -88,7 +88,7 @@
             this.lblUrl.Location = new System.Drawing.Point(39, 340);
             this.lblUrl.Name = "lblUrl";
             this.lblUrl.Size = new System.Drawing.Size(79, 13);
-            this.lblUrl.TabIndex = 4;
+            this.lblUrl.TabIndex = 15;
             this.lblUrl.Text = "Url de Imagen :";
             // 
             // lblMarca
@@ -98,7 +98,7 @@
             this.lblMarca.Location = new System.Drawing.Point(39, 195);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(43, 13);
-            this.lblMarca.TabIndex = 5;
+            this.lblMarca.TabIndex = 12;
             this.lblMarca.Text = "Marca :";
             // 
             // lblPrecio
@@ -108,7 +108,7 @@
             this.lblPrecio.Location = new System.Drawing.Point(39, 290);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(43, 13);
-            this.lblPrecio.TabIndex = 6;
+            this.lblPrecio.TabIndex = 14;
             this.lblPrecio.Text = "Precio :";
             // 
             // lblCategoria
@@ -118,7 +118,7 @@
             this.lblCategoria.Location = new System.Drawing.Point(39, 244);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(58, 13);
-            this.lblCategoria.TabIndex = 7;
+            this.lblCategoria.TabIndex = 13;
             this.lblCategoria.Text = "Categoria :";
             // 
             // pictureImg
@@ -138,7 +138,7 @@
             this.label8.Location = new System.Drawing.Point(149, 9);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(137, 13);
-            this.label8.TabIndex = 9;
+            this.label8.TabIndex = 8;
             this.label8.Text = "COMPLETE LOS CAMPOS";
             // 
             // progressBarAgregar
@@ -149,7 +149,7 @@
             this.progressBarAgregar.Location = new System.Drawing.Point(0, 517);
             this.progressBarAgregar.Name = "progressBarAgregar";
             this.progressBarAgregar.Size = new System.Drawing.Size(419, 23);
-            this.progressBarAgregar.TabIndex = 10;
+            this.progressBarAgregar.TabIndex = 17;
             this.progressBarAgregar.Value = 50;
             // 
             // txtCodProducto
@@ -157,21 +157,21 @@
             this.txtCodProducto.Location = new System.Drawing.Point(152, 41);
             this.txtCodProducto.Name = "txtCodProducto";
             this.txtCodProducto.Size = new System.Drawing.Size(100, 20);
-            this.txtCodProducto.TabIndex = 11;
+            this.txtCodProducto.TabIndex = 0;
             // 
             // txtPrecio
             // 
             this.txtPrecio.Location = new System.Drawing.Point(152, 287);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(100, 20);
-            this.txtPrecio.TabIndex = 15;
+            this.txtPrecio.TabIndex = 5;
             // 
             // txtUrlImg
             // 
             this.txtUrlImg.Location = new System.Drawing.Point(152, 333);
             this.txtUrlImg.Name = "txtUrlImg";
             this.txtUrlImg.Size = new System.Drawing.Size(198, 20);
-            this.txtUrlImg.TabIndex = 16;
+            this.txtUrlImg.TabIndex = 6;
             this.txtUrlImg.Leave += new System.EventHandler(this.txtUrlImg_Leave);
             // 
             // txtDescripcion
@@ -181,14 +181,14 @@
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtDescripcion.Size = new System.Drawing.Size(198, 57);
-            this.txtDescripcion.TabIndex = 17;
+            this.txtDescripcion.TabIndex = 2;
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(152, 77);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
-            this.txtNombre.TabIndex = 18;
+            this.txtNombre.TabIndex = 1;
             // 
             // cboMarca
             // 
@@ -196,7 +196,7 @@
             this.cboMarca.Location = new System.Drawing.Point(152, 195);
             this.cboMarca.Name = "cboMarca";
             this.cboMarca.Size = new System.Drawing.Size(121, 21);
-            this.cboMarca.TabIndex = 19;
+            this.cboMarca.TabIndex = 3;
             // 
             // cboCategoria
             // 
@@ -204,7 +204,7 @@
             this.cboCategoria.Location = new System.Drawing.Point(152, 241);
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(121, 21);
-            this.cboCategoria.TabIndex = 20;
+            this.cboCategoria.TabIndex = 4;
             // 
             // btnGuardar
             // 
@@ -213,7 +213,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(298, 476);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(89, 23);
-            this.btnGuardar.TabIndex = 21;
+            this.btnGuardar.TabIndex = 7;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -227,7 +227,7 @@
             this.lblErrorImg.Location = new System.Drawing.Point(356, 333);
             this.lblErrorImg.Name = "lblErrorImg";
             this.lblErrorImg.Size = new System.Drawing.Size(20, 25);
-            this.lblErrorImg.TabIndex = 22;
+            this.lblErrorImg.TabIndex = 16;
             this.lblErrorImg.Text = "*";
             this.lblErrorImg.Visible = false;
             // 

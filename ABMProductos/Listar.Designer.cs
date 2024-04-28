@@ -42,7 +42,7 @@
             this.lblListaDeArticulos.Location = new System.Drawing.Point(137, 31);
             this.lblListaDeArticulos.Name = "lblListaDeArticulos";
             this.lblListaDeArticulos.Size = new System.Drawing.Size(137, 13);
-            this.lblListaDeArticulos.TabIndex = 2;
+            this.lblListaDeArticulos.TabIndex = 0;
             this.lblListaDeArticulos.Text = "LISTA DE ARTICULOS";
             // 
             // dgvListaDeArticulos
@@ -59,7 +59,7 @@
             this.dgvListaDeArticulos.Name = "dgvListaDeArticulos";
             this.dgvListaDeArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaDeArticulos.Size = new System.Drawing.Size(395, 450);
-            this.dgvListaDeArticulos.TabIndex = 3;
+            this.dgvListaDeArticulos.TabIndex = 1;
             // 
             // Listar
             // 

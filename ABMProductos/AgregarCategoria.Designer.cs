@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarCategoria));
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -43,7 +44,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(208, 158);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(89, 23);
-            this.btnCancelar.TabIndex = 28;
+            this.btnCancelar.TabIndex = 2;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -55,7 +56,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(95, 158);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(89, 23);
-            this.btnGuardar.TabIndex = 27;
+            this.btnGuardar.TabIndex = 1;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -65,7 +66,7 @@
             this.txtNombre.Location = new System.Drawing.Point(168, 107);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(111, 20);
-            this.txtNombre.TabIndex = 26;
+            this.txtNombre.TabIndex = 0;
             // 
             // lblNombre
             // 
@@ -74,7 +75,7 @@
             this.lblNombre.Location = new System.Drawing.Point(109, 110);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(53, 13);
-            this.lblNombre.TabIndex = 25;
+            this.lblNombre.TabIndex = 4;
             this.lblNombre.Text = "Nombre : ";
             // 
             // lblAgregarCat
@@ -85,7 +86,7 @@
             this.lblAgregarCat.Location = new System.Drawing.Point(128, 60);
             this.lblAgregarCat.Name = "lblAgregarCat";
             this.lblAgregarCat.Size = new System.Drawing.Size(142, 13);
-            this.lblAgregarCat.TabIndex = 24;
+            this.lblAgregarCat.TabIndex = 3;
             this.lblAgregarCat.Text = "AGREGAR CATEGORIA";
             // 
             // lblVacio
@@ -96,7 +97,7 @@
             this.lblVacio.Location = new System.Drawing.Point(285, 110);
             this.lblVacio.Name = "lblVacio";
             this.lblVacio.Size = new System.Drawing.Size(11, 13);
-            this.lblVacio.TabIndex = 29;
+            this.lblVacio.TabIndex = 5;
             this.lblVacio.Text = "*";
             this.lblVacio.Visible = false;
             // 
@@ -111,6 +112,7 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblAgregarCat);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AgregarCategoria";
             this.Text = "AgregarCategoria";
             this.ResumeLayout(false);

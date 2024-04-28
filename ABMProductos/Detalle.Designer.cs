@@ -70,7 +70,7 @@
             this.labelMarca.Location = new System.Drawing.Point(10, 146);
             this.labelMarca.Name = "labelMarca";
             this.labelMarca.Size = new System.Drawing.Size(42, 13);
-            this.labelMarca.TabIndex = 6;
+            this.labelMarca.TabIndex = 10;
             this.labelMarca.Text = "Marca";
             // 
             // labelNombre
@@ -81,7 +81,7 @@
             this.labelNombre.Location = new System.Drawing.Point(10, 89);
             this.labelNombre.Name = "labelNombre";
             this.labelNombre.Size = new System.Drawing.Size(50, 13);
-            this.labelNombre.TabIndex = 7;
+            this.labelNombre.TabIndex = 6;
             this.labelNombre.Text = "Nombre";
             // 
             // labelCategoria
@@ -92,7 +92,7 @@
             this.labelCategoria.Location = new System.Drawing.Point(10, 173);
             this.labelCategoria.Name = "labelCategoria";
             this.labelCategoria.Size = new System.Drawing.Size(61, 13);
-            this.labelCategoria.TabIndex = 8;
+            this.labelCategoria.TabIndex = 12;
             this.labelCategoria.Text = "Categoria";
             // 
             // labelPrecio
@@ -103,7 +103,7 @@
             this.labelPrecio.Location = new System.Drawing.Point(10, 116);
             this.labelPrecio.Name = "labelPrecio";
             this.labelPrecio.Size = new System.Drawing.Size(43, 13);
-            this.labelPrecio.TabIndex = 9;
+            this.labelPrecio.TabIndex = 8;
             this.labelPrecio.Text = "Precio";
             // 
             // lblDetalleDeArticulo
@@ -112,7 +112,7 @@
             this.lblDetalleDeArticulo.Location = new System.Drawing.Point(143, 9);
             this.lblDetalleDeArticulo.Name = "lblDetalleDeArticulo";
             this.lblDetalleDeArticulo.Size = new System.Drawing.Size(130, 13);
-            this.lblDetalleDeArticulo.TabIndex = 19;
+            this.lblDetalleDeArticulo.TabIndex = 3;
             this.lblDetalleDeArticulo.Text = "DETALLE DE ARTICULO";
             // 
             // pbxImg
@@ -134,7 +134,7 @@
             this.btnVolver.Location = new System.Drawing.Point(332, 505);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(75, 23);
-            this.btnVolver.TabIndex = 21;
+            this.btnVolver.TabIndex = 2;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
@@ -146,7 +146,7 @@
             this.txtCodigo.Location = new System.Drawing.Point(95, 59);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(40, 13);
-            this.txtCodigo.TabIndex = 23;
+            this.txtCodigo.TabIndex = 5;
             this.txtCodigo.Text = "Codigo";
             // 
             // txtNombre
@@ -156,7 +156,7 @@
             this.txtNombre.Location = new System.Drawing.Point(95, 89);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(44, 13);
-            this.txtNombre.TabIndex = 24;
+            this.txtNombre.TabIndex = 7;
             this.txtNombre.Text = "Nombre";
             // 
             // txtPrecio
@@ -166,7 +166,7 @@
             this.txtPrecio.Location = new System.Drawing.Point(95, 116);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(37, 13);
-            this.txtPrecio.TabIndex = 25;
+            this.txtPrecio.TabIndex = 9;
             this.txtPrecio.Text = "Precio";
             // 
             // txtMarca
@@ -176,7 +176,7 @@
             this.txtMarca.Location = new System.Drawing.Point(95, 146);
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(37, 13);
-            this.txtMarca.TabIndex = 26;
+            this.txtMarca.TabIndex = 11;
             this.txtMarca.Text = "Marca";
             // 
             // txtCategoria
@@ -186,7 +186,7 @@
             this.txtCategoria.Location = new System.Drawing.Point(95, 173);
             this.txtCategoria.Name = "txtCategoria";
             this.txtCategoria.Size = new System.Drawing.Size(52, 13);
-            this.txtCategoria.TabIndex = 27;
+            this.txtCategoria.TabIndex = 13;
             this.txtCategoria.Text = "Categoria";
             // 
             // labelDescripcion
@@ -197,7 +197,7 @@
             this.labelDescripcion.Location = new System.Drawing.Point(186, 59);
             this.labelDescripcion.Name = "labelDescripcion";
             this.labelDescripcion.Size = new System.Drawing.Size(74, 13);
-            this.labelDescripcion.TabIndex = 5;
+            this.labelDescripcion.TabIndex = 14;
             this.labelDescripcion.Text = "Descripcion";
             // 
             // dgvDescripcion
@@ -209,7 +209,7 @@
             this.dgvDescripcion.Location = new System.Drawing.Point(189, 79);
             this.dgvDescripcion.Name = "dgvDescripcion";
             this.dgvDescripcion.Size = new System.Drawing.Size(218, 156);
-            this.dgvDescripcion.TabIndex = 22;
+            this.dgvDescripcion.TabIndex = 15;
             // 
             // txtDescripcion
             // 
@@ -217,7 +217,7 @@
             this.txtDescripcion.Location = new System.Drawing.Point(210, 89);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(63, 13);
-            this.txtDescripcion.TabIndex = 28;
+            this.txtDescripcion.TabIndex = 16;
             this.txtDescripcion.Text = "Descripcion";
             // 
             // btnSiguiente
@@ -227,7 +227,7 @@
             this.btnSiguiente.Location = new System.Drawing.Point(334, 456);
             this.btnSiguiente.Name = "btnSiguiente";
             this.btnSiguiente.Size = new System.Drawing.Size(52, 26);
-            this.btnSiguiente.TabIndex = 29;
+            this.btnSiguiente.TabIndex = 1;
             this.btnSiguiente.Text = "--->";
             this.btnSiguiente.UseVisualStyleBackColor = false;
             this.btnSiguiente.Visible = false;
@@ -240,7 +240,7 @@
             this.btnAnterior.Location = new System.Drawing.Point(36, 456);
             this.btnAnterior.Name = "btnAnterior";
             this.btnAnterior.Size = new System.Drawing.Size(39, 26);
-            this.btnAnterior.TabIndex = 30;
+            this.btnAnterior.TabIndex = 0;
             this.btnAnterior.Text = "<---";
             this.btnAnterior.UseVisualStyleBackColor = false;
             this.btnAnterior.Visible = false;

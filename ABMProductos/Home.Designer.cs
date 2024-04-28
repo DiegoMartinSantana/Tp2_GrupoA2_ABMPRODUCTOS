@@ -67,7 +67,7 @@
             this.linkLabel1.Location = new System.Drawing.Point(489, 134);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(0, 13);
-            this.linkLabel1.TabIndex = 1;
+            this.linkLabel1.TabIndex = 15;
             // 
             // lblHome
             // 
@@ -75,7 +75,7 @@
             this.lblHome.Location = new System.Drawing.Point(1, 9);
             this.lblHome.Name = "lblHome";
             this.lblHome.Size = new System.Drawing.Size(0, 13);
-            this.lblHome.TabIndex = 2;
+            this.lblHome.TabIndex = 11;
             // 
             // menu1
             // 
@@ -86,7 +86,7 @@
             this.menu1.Location = new System.Drawing.Point(0, 0);
             this.menu1.Name = "menu1";
             this.menu1.Size = new System.Drawing.Size(834, 24);
-            this.menu1.TabIndex = 3;
+            this.menu1.TabIndex = 12;
             this.menu1.Text = "menuStrip1";
             // 
             // agregarToolStripMenuItem
@@ -137,7 +137,7 @@
             // 
             this.articulosListarToolStripMenuItem.Image = global::ABMProductos.Properties.Resources.lista_icono;
             this.articulosListarToolStripMenuItem.Name = "articulosListarToolStripMenuItem";
-            this.articulosListarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.articulosListarToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.articulosListarToolStripMenuItem.Text = "Articulos";
             this.articulosListarToolStripMenuItem.Click += new System.EventHandler(this.articulosListarToolStripMenuItem_Click);
             // 
@@ -145,7 +145,7 @@
             // 
             this.marcasListarToolStripMenuItem.Image = global::ABMProductos.Properties.Resources.lista_icono;
             this.marcasListarToolStripMenuItem.Name = "marcasListarToolStripMenuItem";
-            this.marcasListarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.marcasListarToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.marcasListarToolStripMenuItem.Text = "Marcas";
             this.marcasListarToolStripMenuItem.Click += new System.EventHandler(this.marcasListarToolStripMenuItem_Click);
             // 
@@ -153,7 +153,7 @@
             // 
             this.categoriasListarToolStripMenuItem.Image = global::ABMProductos.Properties.Resources.lista_icono;
             this.categoriasListarToolStripMenuItem.Name = "categoriasListarToolStripMenuItem";
-            this.categoriasListarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.categoriasListarToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.categoriasListarToolStripMenuItem.Text = "Categorias";
             this.categoriasListarToolStripMenuItem.Click += new System.EventHandler(this.categoriasListarToolStripMenuItem_Click);
             // 
@@ -178,7 +178,7 @@
             this.btnDetalle.Location = new System.Drawing.Point(708, 385);
             this.btnDetalle.Name = "btnDetalle";
             this.btnDetalle.Size = new System.Drawing.Size(75, 23);
-            this.btnDetalle.TabIndex = 5;
+            this.btnDetalle.TabIndex = 8;
             this.btnDetalle.Text = "Ver Detalles";
             this.btnDetalle.UseVisualStyleBackColor = true;
             this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
@@ -189,7 +189,7 @@
             this.label1.Location = new System.Drawing.Point(570, 238);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 13);
-            this.label1.TabIndex = 6;
+            this.label1.TabIndex = 5;
             // 
             // cbo1
             // 
@@ -198,7 +198,7 @@
             this.cbo1.Location = new System.Drawing.Point(56, 134);
             this.cbo1.Name = "cbo1";
             this.cbo1.Size = new System.Drawing.Size(121, 21);
-            this.cbo1.TabIndex = 7;
+            this.cbo1.TabIndex = 1;
             this.cbo1.SelectedIndexChanged += new System.EventHandler(this.cbo1_SelectedIndexChanged);
             // 
             // lblFiltrar
@@ -207,7 +207,7 @@
             this.lblFiltrar.Location = new System.Drawing.Point(53, 103);
             this.lblFiltrar.Name = "lblFiltrar";
             this.lblFiltrar.Size = new System.Drawing.Size(94, 13);
-            this.lblFiltrar.TabIndex = 8;
+            this.lblFiltrar.TabIndex = 14;
             this.lblFiltrar.Text = "Filtrar Articulo por :";
             // 
             // lblBuscar
@@ -216,7 +216,7 @@
             this.lblBuscar.Location = new System.Drawing.Point(53, 65);
             this.lblBuscar.Name = "lblBuscar";
             this.lblBuscar.Size = new System.Drawing.Size(81, 13);
-            this.lblBuscar.TabIndex = 9;
+            this.lblBuscar.TabIndex = 13;
             this.lblBuscar.Text = "Buscar Articulo:";
             // 
             // txtBuscar
@@ -224,7 +224,7 @@
             this.txtBuscar.Location = new System.Drawing.Point(161, 65);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(271, 20);
-            this.txtBuscar.TabIndex = 10;
+            this.txtBuscar.TabIndex = 0;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // cbo2
@@ -233,14 +233,14 @@
             this.cbo2.Location = new System.Drawing.Point(224, 134);
             this.cbo2.Name = "cbo2";
             this.cbo2.Size = new System.Drawing.Size(121, 21);
-            this.cbo2.TabIndex = 11;
+            this.cbo2.TabIndex = 2;
             // 
             // btnEliminar
             // 
             this.btnEliminar.Location = new System.Drawing.Point(708, 443);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 13;
+            this.btnEliminar.TabIndex = 10;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -250,7 +250,7 @@
             this.btnModificar.Location = new System.Drawing.Point(708, 414);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
-            this.btnModificar.TabIndex = 14;
+            this.btnModificar.TabIndex = 9;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -267,7 +267,7 @@
             this.btnRefrescar.Location = new System.Drawing.Point(697, 195);
             this.btnRefrescar.Name = "btnRefrescar";
             this.btnRefrescar.Size = new System.Drawing.Size(75, 23);
-            this.btnRefrescar.TabIndex = 16;
+            this.btnRefrescar.TabIndex = 7;
             this.btnRefrescar.Text = "Refresh";
             this.btnRefrescar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnRefrescar.UseVisualStyleBackColor = true;
@@ -278,14 +278,14 @@
             this.txtFiltradoCriterio.Location = new System.Drawing.Point(383, 134);
             this.txtFiltradoCriterio.Name = "txtFiltradoCriterio";
             this.txtFiltradoCriterio.Size = new System.Drawing.Size(100, 20);
-            this.txtFiltradoCriterio.TabIndex = 17;
+            this.txtFiltradoCriterio.TabIndex = 3;
             // 
             // btnBuscar
             // 
             this.btnBuscar.Location = new System.Drawing.Point(532, 134);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 18;
+            this.btnBuscar.TabIndex = 6;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);

@@ -57,7 +57,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(294, 492);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(89, 23);
-            this.btnGuardar.TabIndex = 39;
+            this.btnGuardar.TabIndex = 7;
             this.btnGuardar.Text = "Modificar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -68,7 +68,7 @@
             this.cboCategoria.Location = new System.Drawing.Point(148, 257);
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(121, 21);
-            this.cboCategoria.TabIndex = 38;
+            this.cboCategoria.TabIndex = 4;
             // 
             // cboMarca
             // 
@@ -76,14 +76,14 @@
             this.cboMarca.Location = new System.Drawing.Point(148, 211);
             this.cboMarca.Name = "cboMarca";
             this.cboMarca.Size = new System.Drawing.Size(121, 21);
-            this.cboMarca.TabIndex = 37;
+            this.cboMarca.TabIndex = 3;
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(148, 93);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
-            this.txtNombre.TabIndex = 36;
+            this.txtNombre.TabIndex = 1;
             // 
             // txtDescripcion
             // 
@@ -92,28 +92,28 @@
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtDescripcion.Size = new System.Drawing.Size(198, 57);
-            this.txtDescripcion.TabIndex = 35;
+            this.txtDescripcion.TabIndex = 2;
             // 
             // txtUrlImg
             // 
             this.txtUrlImg.Location = new System.Drawing.Point(148, 349);
             this.txtUrlImg.Name = "txtUrlImg";
             this.txtUrlImg.Size = new System.Drawing.Size(198, 20);
-            this.txtUrlImg.TabIndex = 34;
+            this.txtUrlImg.TabIndex = 6;
             // 
             // txtPrecio
             // 
             this.txtPrecio.Location = new System.Drawing.Point(148, 303);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(100, 20);
-            this.txtPrecio.TabIndex = 33;
+            this.txtPrecio.TabIndex = 5;
             // 
             // txtCodProducto
             // 
             this.txtCodProducto.Location = new System.Drawing.Point(148, 57);
             this.txtCodProducto.Name = "txtCodProducto";
             this.txtCodProducto.Size = new System.Drawing.Size(100, 20);
-            this.txtCodProducto.TabIndex = 32;
+            this.txtCodProducto.TabIndex = 0;
             // 
             // label8
             // 
@@ -122,7 +122,7 @@
             this.label8.Location = new System.Drawing.Point(90, 24);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(234, 13);
-            this.label8.TabIndex = 31;
+            this.label8.TabIndex = 8;
             this.label8.Text = "SOBREESCRIBA LOS CAMPOS A MODIFICAR";
             // 
             // pictureImg
@@ -141,7 +141,7 @@
             this.lblCategoria.Location = new System.Drawing.Point(35, 260);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(58, 13);
-            this.lblCategoria.TabIndex = 29;
+            this.lblCategoria.TabIndex = 13;
             this.lblCategoria.Text = "Categoria :";
             // 
             // lblPrecio
@@ -151,7 +151,7 @@
             this.lblPrecio.Location = new System.Drawing.Point(35, 306);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(43, 13);
-            this.lblPrecio.TabIndex = 28;
+            this.lblPrecio.TabIndex = 14;
             this.lblPrecio.Text = "Precio :";
             // 
             // lblMarca
@@ -161,7 +161,7 @@
             this.lblMarca.Location = new System.Drawing.Point(35, 211);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(43, 13);
-            this.lblMarca.TabIndex = 27;
+            this.lblMarca.TabIndex = 12;
             this.lblMarca.Text = "Marca :";
             // 
             // lblUrl
@@ -171,7 +171,7 @@
             this.lblUrl.Location = new System.Drawing.Point(35, 356);
             this.lblUrl.Name = "lblUrl";
             this.lblUrl.Size = new System.Drawing.Size(26, 13);
-            this.lblUrl.TabIndex = 26;
+            this.lblUrl.TabIndex = 16;
             this.lblUrl.Text = "Url :";
             // 
             // lblDescripcion
@@ -181,7 +181,7 @@
             this.lblDescripcion.Location = new System.Drawing.Point(35, 137);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(69, 13);
-            this.lblDescripcion.TabIndex = 25;
+            this.lblDescripcion.TabIndex = 11;
             this.lblDescripcion.Text = "Descripcion :";
             // 
             // lblImg
@@ -191,7 +191,7 @@
             this.lblImg.Location = new System.Drawing.Point(35, 333);
             this.lblImg.Name = "lblImg";
             this.lblImg.Size = new System.Drawing.Size(76, 13);
-            this.lblImg.TabIndex = 24;
+            this.lblImg.TabIndex = 15;
             this.lblImg.Text = "Imagen  o Url  ";
             // 
             // lblNombre
@@ -201,7 +201,7 @@
             this.lblNombre.Location = new System.Drawing.Point(35, 96);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(53, 13);
-            this.lblNombre.TabIndex = 23;
+            this.lblNombre.TabIndex = 10;
             this.lblNombre.Text = "Nombre : ";
             // 
             // lblCodigo
@@ -211,7 +211,7 @@
             this.lblCodigo.Location = new System.Drawing.Point(35, 60);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(107, 13);
-            this.lblCodigo.TabIndex = 22;
+            this.lblCodigo.TabIndex = 9;
             this.lblCodigo.Text = "Codigo de Producto :";
             // 
             // Modificar

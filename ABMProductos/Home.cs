@@ -134,6 +134,8 @@ namespace ABMProductos
 
             var Modificar = new Modificar(seleccionado);
             Modificar.ShowDialog();
+
+            Cargar();
         }
         private void btnRefrescar_Click(object sender, EventArgs e) // Boton para refrescar cuadro de busqueda de Articulos
         {
