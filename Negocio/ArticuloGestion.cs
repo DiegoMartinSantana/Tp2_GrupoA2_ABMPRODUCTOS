@@ -30,12 +30,41 @@ namespace Negocio
             catch (Exception ex)
             {
 
-                throw ex;
-            }
-            finally
+				throw ex;
+			}
+			finally
+			{
+				Acceso.cerrarConexion();
+			}
+        }public void Modificar(Articulo Art) // Modifica Articulo
+        {
+            AccesoBd Acceso = new AccesoBd();
+
+            try
             {
-                Acceso.cerrarConexion();
+				Acceso.setQuery("UPDATE ARTICULOS set Codigo = @cod, Nombre =@nombre, Descripcion = @desc, IdMarca = @idm, IdCategoria =@idc, Precio=@precio WHERE Id=@id");
+
+                Acceso.setParametro("@cod", Art.Codigo);
+				Acceso.setParametro("@nombre",Art.Nombre);
+                Acceso.setParametro("@desc",Art.Descripcion);
+                Acceso.setParametro("@idm",Art.Marca.Id);
+                Acceso.setParametro("@idc",Art.Categoria.Id);
+				Acceso.setParametro("@precio",Art.Precio);
+				Acceso.setParametro("@id",Art.Id);
+                //inssercion
+                Acceso.ejecutarAccion();
+
+
             }
+            catch (Exception ex)
+			{
+
+				throw ex;
+			}
+			finally
+			{
+				Acceso.cerrarConexion();
+			}
         }
 
         public List<Articulo> Listado() // Listar de Articulos
