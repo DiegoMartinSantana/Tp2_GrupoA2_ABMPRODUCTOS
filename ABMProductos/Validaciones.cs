@@ -11,18 +11,18 @@ namespace ABMProductos
     {
 
 
-          public static bool ValidarTextBoxes(List<Control> textBoxes)
-    {
-          
-        foreach (Control textBox in textBoxes)
+        public static bool ValidarTextBoxes(List<Control> textBoxes)
         {
-            if (string.IsNullOrEmpty(textBox.Text)) 
+
+            foreach (Control textBox in textBoxes)
             {
-                return false; // Devuelve falso si encuentra un TextBox vacío o null
+                if (string.IsNullOrEmpty(textBox.Text))
+                {
+                    return false; // Devuelve falso si encuentra un TextBox vacío o null
+                }
             }
+            return true; // Devuelve true si todos los TextBox tienen contenido
         }
-        return true; // Devuelve true si todos los TextBox tienen contenido
-    }
 
 
 

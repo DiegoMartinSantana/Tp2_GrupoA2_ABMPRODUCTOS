@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
@@ -107,7 +108,10 @@ namespace ABMProductos
                
             }
             }
-
+            else
+            {
+              
+            }
 
 
             this.Close();
@@ -154,5 +158,9 @@ namespace ABMProductos
                 MessageBox.Show("La url proporcionada no se ha podido cargar.");
             }
         }
+
+      
+
+
     }
 }

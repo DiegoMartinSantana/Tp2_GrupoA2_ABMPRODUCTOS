@@ -57,15 +57,15 @@ namespace ABMProductos
                     seleccionada = (Categoria)dgvCat.CurrentRow.DataBoundItem;
 
 
-                        if (gestionCat.ExistenciaArticulos(seleccionada.Id))
+                        if (!gestionCat.ExistenciaArticulos(seleccionada.Id))
                         {
-                            //Verdadero si existe
+                            
                             MessageBox.Show("No es posible eliminar una categoria con articulos asociados.");
                             return;
                         }
                         else
                         {
-                            //falso si no existe ninguno ELIMINA
+                           
                             gestionCat.Eliminar(seleccionada.Id);
                             MessageBox.Show("Se ha eliminado correctamente.");
                             CargarDgv(); // actualizamos la lista

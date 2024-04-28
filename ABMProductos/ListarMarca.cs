@@ -131,7 +131,7 @@ namespace ABMProductos
                     MessageBox.Show("No ha seleccionado ninguna marca.");
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 MessageBox.Show("Error al intentar modificar la marca");
             }

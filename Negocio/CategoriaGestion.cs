@@ -49,10 +49,10 @@ namespace Negocio
                 Acceso.ejecutarAccion();
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
             finally
             {
@@ -77,7 +77,7 @@ namespace Negocio
                 while (Acceso.Lector.Read())
                 {
                     string aux = (string) Acceso.Lector["Nombre"];
-                    if (string.IsNullOrEmpty(aux))
+                    if (!string.IsNullOrEmpty(aux))
                     {
                         return false;
                     }
