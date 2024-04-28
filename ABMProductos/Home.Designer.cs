@@ -35,6 +35,9 @@
             this.menu1 = new System.Windows.Forms.MenuStrip();
             this.verArticulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarArticuloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.articuloiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.marcaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tipoArticuloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dvgArticulos = new System.Windows.Forms.DataGridView();
             this.btnDetalle = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,9 +53,6 @@
             this.btnRefrescar = new System.Windows.Forms.Button();
             this.txtFiltradoCriterio = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.articuloiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.marcaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tipoArticuloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -103,6 +103,25 @@
             this.agregarArticuloToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.agregarArticuloToolStripMenuItem.Text = "Agregar";
             this.agregarArticuloToolStripMenuItem.Click += new System.EventHandler(this.agregarArticuloToolStripMenuItem_Click);
+            // 
+            // articuloiToolStripMenuItem
+            // 
+            this.articuloiToolStripMenuItem.Name = "articuloiToolStripMenuItem";
+            this.articuloiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.articuloiToolStripMenuItem.Text = "Articulo";
+            this.articuloiToolStripMenuItem.Click += new System.EventHandler(this.articuloiToolStripMenuItem_Click);
+            // 
+            // marcaToolStripMenuItem
+            // 
+            this.marcaToolStripMenuItem.Name = "marcaToolStripMenuItem";
+            this.marcaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.marcaToolStripMenuItem.Text = "Marca";
+            // 
+            // tipoArticuloToolStripMenuItem
+            // 
+            this.tipoArticuloToolStripMenuItem.Name = "tipoArticuloToolStripMenuItem";
+            this.tipoArticuloToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tipoArticuloToolStripMenuItem.Text = "Tipo Articulo";
             // 
             // dvgArticulos
             // 
@@ -190,6 +209,7 @@
             this.btnEliminar.TabIndex = 13;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
@@ -245,25 +265,6 @@
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // articuloiToolStripMenuItem
-            // 
-            this.articuloiToolStripMenuItem.Name = "articuloiToolStripMenuItem";
-            this.articuloiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.articuloiToolStripMenuItem.Text = "Articulo";
-            this.articuloiToolStripMenuItem.Click += new System.EventHandler(this.articuloiToolStripMenuItem_Click);
-            // 
-            // marcaToolStripMenuItem
-            // 
-            this.marcaToolStripMenuItem.Name = "marcaToolStripMenuItem";
-            this.marcaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.marcaToolStripMenuItem.Text = "Marca";
-            // 
-            // tipoArticuloToolStripMenuItem
-            // 
-            this.tipoArticuloToolStripMenuItem.Name = "tipoArticuloToolStripMenuItem";
-            this.tipoArticuloToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.tipoArticuloToolStripMenuItem.Text = "Tipo Articulo";
             // 
             // Home
             // 

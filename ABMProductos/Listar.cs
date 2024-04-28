@@ -30,7 +30,7 @@ namespace ABMProductos
             dgvListaDeArticulos.Columns["Descripcion"].Visible = false;
             dgvListaDeArticulos.Columns["Marca"].Visible = false;
             dgvListaDeArticulos.Columns["Categoria"].Visible = false;
-            dgvListaDeArticulos.Columns["Imagen"].Visible = false;
+            //dgvListaDeArticulos.Columns["Imagen"].Visible = false;
         }
     }
 }

@@ -9,8 +9,7 @@ namespace Negocio
 {
     public class ArticuloGestion
     {
-
-        public void Add(Articulo Art)
+        public void Add(Articulo Art) // Agregar Articulo
         {
             AccesoBd Acceso = new AccesoBd();
 
@@ -39,7 +38,7 @@ namespace Negocio
 			}
         }
 
-        public List<Articulo> Listado()
+        public List<Articulo> Listado() // Listar de Articulos
         {
             AccesoBd Acceso = new AccesoBd();
 
@@ -81,8 +80,7 @@ namespace Negocio
 			}
         }
 
-
-        public List<Articulo> FiltroCriterios(string campo, string criterio, string filtro)
+        public List<Articulo> FiltroCriterios(string campo, string criterio, string filtro) // Filtrar Articulos
         {
 
             var Acceso = new AccesoBd();
@@ -191,6 +189,21 @@ namespace Negocio
 
         }
 
+        public void eliminar(string codigo) // Eliminacion fisica de Articulo
+        {
+            try
+            {
+                AccesoBd datos = new AccesoBd();
+                datos.setQuery("DELETE FROM ARTICULOS WHERE Codigo = @Codigo");
+                datos.setParametro("@Codigo", codigo);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
 
+                throw ex;
+            }
+
+        }
     }
 }

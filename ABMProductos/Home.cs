@@ -10,7 +10,9 @@ namespace ABMProductos
         {
             InitializeComponent();
         }
+        
         private List<Articulo> ListArticulos;
+        
         private void Form1_Load(object sender, EventArgs e)
         {
             Cargar();
@@ -24,6 +26,7 @@ namespace ABMProductos
 
 
         }
+        
         public void Cargar()
         {
             ArticuloGestion artGestion = new ArticuloGestion();
@@ -34,6 +37,7 @@ namespace ABMProductos
         private void agregarArticuloToolStripMenuItem_Click(object sender, EventArgs e)
         {
         }
+        
         private void articuloiToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var Agregar = new Agregar();
@@ -141,13 +145,34 @@ namespace ABMProductos
 
 
         }
+        
         public void OcultarColumnas()
         {
             dvgArticulos.Columns["Id"].Visible = false;
             dvgArticulos.Columns["Codigo"].Visible =false;
             dvgArticulos.Columns["Descripcion"].Visible = false;
         }
-
-      
+        
+        private void btnEliminar_Click(object sender, EventArgs e) // Boton para eliminar Articulo
+        {
+            ArticuloGestion artGestion = new ArticuloGestion();
+            Articulo seleccionado;
+            
+            try
+            {
+                DialogResult respuesta = MessageBox.Show("¿Está seguro de que desea eliminar el artículo de forma permanente?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                
+                if(respuesta == DialogResult.Yes)
+                {
+                    seleccionado = (Articulo)dvgArticulos.CurrentRow.DataBoundItem;
+                    artGestion.eliminar(seleccionado.Codigo);
+                    Cargar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }
