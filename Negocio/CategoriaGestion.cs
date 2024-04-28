@@ -70,7 +70,10 @@ namespace Negocio
             {
                 Acceso.setQuery("SELECT TOP(1) Nombre FROM Articulos WHERE IdCategoria = @IdCat"); // con que exista uno ya alcanza para no permitir borrar
                 Acceso.setParametro("IdCat", idCategoria);
-                Acceso.ejecutarAccion();
+
+
+                Acceso.ejecutarLectura();
+
                 while (Acceso.Lector.Read())
                 {
                     string aux = (string) Acceso.Lector["Nombre"];

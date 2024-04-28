@@ -52,6 +52,12 @@
     <Compile Include="Agregar.Designer.cs">
       <DependentUpon>Agregar.cs</DependentUpon>
     </Compile>
+    <Compile Include="AgregarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarCategoria.Designer.cs">
+      <DependentUpon>AgregarCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="AgregarMarca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,12 @@
     </Compile>
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListadoCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListadoCategorias.Designer.cs">
+      <DependentUpon>ListadoCategorias.cs</DependentUpon>
     </Compile>
     <Compile Include="Listar.cs">
       <SubType>Form</SubType>
@@ -94,6 +106,9 @@
     <EmbeddedResource Include="Agregar.resx">
       <DependentUpon>Agregar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AgregarCategoria.resx">
+      <DependentUpon>AgregarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AgregarMarca.resx">
       <DependentUpon>AgregarMarca.cs</DependentUpon>
     </EmbeddedResource>
@@ -103,6 +118,9 @@
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListadoCategorias.resx">
+      <DependentUpon>ListadoCategorias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Listar.resx">
       <DependentUpon>Listar.cs</DependentUpon>

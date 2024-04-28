@@ -15,27 +15,27 @@ namespace Negocio
 
             try
             {
-				Acceso.setQuery("INSERT INTO ARTICULOS (Codigo,Nombre,Descripcion,IdMarca,IdCategoria,Precio)  VALUES (@cod,@nombre,@desc,@idm,@idc,@precio)");
-				Acceso.setParametro("@cod", Art.Codigo);
-				Acceso.setParametro("@nombre",Art.Nombre);
-                Acceso.setParametro("@desc",Art.Descripcion);
-                Acceso.setParametro("@idm",Art.Marca.Id);
-                Acceso.setParametro("@idc",Art.Categoria.Id);
-				Acceso.setParametro("@precio",Art.Precio);
-				//insertamos articulo 
-				Acceso.ejecutarAccion();
+                Acceso.setQuery("INSERT INTO ARTICULOS (Codigo,Nombre,Descripcion,IdMarca,IdCategoria,Precio)  VALUES (@cod,@nombre,@desc,@idm,@idc,@precio)");
+                Acceso.setParametro("@cod", Art.Codigo);
+                Acceso.setParametro("@nombre", Art.Nombre);
+                Acceso.setParametro("@desc", Art.Descripcion);
+                Acceso.setParametro("@idm", Art.Marca.Id);
+                Acceso.setParametro("@idc", Art.Categoria.Id);
+                Acceso.setParametro("@precio", Art.Precio);
+                //insertamos articulo 
+                Acceso.ejecutarAccion();
 
 
             }
             catch (Exception ex)
-			{
+            {
 
-				throw ex;
-			}
-			finally
-			{
-				Acceso.cerrarConexion();
-			}
+                throw ex;
+            }
+            finally
+            {
+                Acceso.cerrarConexion();
+            }
         }
 
         public List<Articulo> Listado() // Listar de Articulos
@@ -43,41 +43,41 @@ namespace Negocio
             AccesoBd Acceso = new AccesoBd();
 
             var ListaArt = new List<Articulo>();
-			try
-			{
-				
-				Acceso.setQuery(" SELECT A.ID,A.CODIGO,A.NOMBRE,A.Descripcion,A.IdMarca,M.Descripcion MarcaDesc , A.IdCategoria,C.Descripcion CatDesc ,A.Precio FROM ARTICULOS AS A INNER JOIN MARCAS AS M ON M.Id = A.IdMarca INNER JOIN CATEGORIAS AS C ON C.Id = A.IdCategoria ");
-				Acceso.ejecutarLectura();
+            try
+            {
 
-				while(Acceso.Lector.Read())
-				{
+                Acceso.setQuery(" SELECT A.ID,A.CODIGO,A.NOMBRE,A.Descripcion,A.IdMarca,M.Descripcion MarcaDesc , A.IdCategoria,C.Descripcion CatDesc ,A.Precio FROM ARTICULOS AS A INNER JOIN MARCAS AS M ON M.Id = A.IdMarca INNER JOIN CATEGORIAS AS C ON C.Id = A.IdCategoria ");
+                Acceso.ejecutarLectura();
+
+                while (Acceso.Lector.Read())
+                {
                     var Art = new Articulo();
-					Art.Id = (int)Acceso.Lector["Id"]; 
+                    Art.Id = (int)Acceso.Lector["Id"];
                     Art.Codigo = (string)Acceso.Lector["Codigo"];
-				    Art.Nombre = (string)Acceso.Lector["Nombre"];
-					Art.Descripcion = (string)Acceso.Lector["Descripcion"];	
-					//Genero la instancia de la Marca porque es un obj de mi clase Art
-					Art.Marca = new Marca();	
-					Art.Marca.Id = (int)Acceso.Lector["IdMarca"];
-					Art.Marca.Descripcion = (string)Acceso.Lector["MarcaDesc"];
-					Art.Categoria = new Categoria();	
-					Art.Categoria.Id = (int)Acceso.Lector["IdCategoria"];
-					Art.Categoria.Descripcion = (string)Acceso.Lector["CatDesc"];
-					Art.Precio = (decimal)Acceso.Lector["Precio"];
+                    Art.Nombre = (string)Acceso.Lector["Nombre"];
+                    Art.Descripcion = (string)Acceso.Lector["Descripcion"];
+                    //Genero la instancia de la Marca porque es un obj de mi clase Art
+                    Art.Marca = new Marca();
+                    Art.Marca.Id = (int)Acceso.Lector["IdMarca"];
+                    Art.Marca.Descripcion = (string)Acceso.Lector["MarcaDesc"];
+                    Art.Categoria = new Categoria();
+                    Art.Categoria.Id = (int)Acceso.Lector["IdCategoria"];
+                    Art.Categoria.Descripcion = (string)Acceso.Lector["CatDesc"];
+                    Art.Precio = (decimal)Acceso.Lector["Precio"];
 
                     ListaArt.Add(Art);
                 }
-				return ListaArt;
-			}
-			catch (Exception ex)
-			{
+                return ListaArt;
+            }
+            catch (Exception ex)
+            {
 
-				throw ex;
-			}
-			finally
-			{
-				Acceso.cerrarConexion();
-			}
+                throw ex;
+            }
+            finally
+            {
+                Acceso.cerrarConexion();
+            }
         }
 
         public List<Articulo> FiltroCriterios(string campo, string criterio, string filtro) // Filtrar Articulos
@@ -189,19 +189,28 @@ namespace Negocio
 
         }
 
-        public void eliminar(string codigo) // Eliminacion fisica de Articulo
+        public void eliminar(int id) // Eliminacion fisica de Articulo
         {
+            AccesoBd datos = new AccesoBd();
+
             try
             {
-                AccesoBd datos = new AccesoBd();
-                datos.setQuery("DELETE FROM ARTICULOS WHERE Codigo = @Codigo");
-                datos.setParametro("@Codigo", codigo);
+                datos.setQuery("DELETE FROM ARTICULOS WHERE Id = @Id");
+                datos.setParametro("@Id",id);
                 datos.ejecutarAccion();
+
+                var imgGestion = new ImagenGestion();
+                imgGestion.Eliminar(id);
+
             }
             catch (Exception ex)
             {
 
                 throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
             }
 
         }

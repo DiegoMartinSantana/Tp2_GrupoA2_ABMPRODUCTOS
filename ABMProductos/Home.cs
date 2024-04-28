@@ -110,7 +110,6 @@ namespace ABMProductos
         {
             ArticuloGestion artGestion = new ArticuloGestion();
             Articulo seleccionado;
-            
             try
             {
                 DialogResult respuesta = MessageBox.Show("¿Está seguro de que desea eliminar el artículo de forma permanente?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -118,7 +117,8 @@ namespace ABMProductos
                 if(respuesta == DialogResult.Yes)
                 {
                     seleccionado = (Articulo)dvgArticulos.CurrentRow.DataBoundItem;
-                    artGestion.eliminar(seleccionado.Codigo);
+                    artGestion.eliminar(seleccionado.Id);
+                
                     Cargar();
                 }
             }
@@ -161,7 +161,8 @@ namespace ABMProductos
         }
         private void categoriaToolStripMenuItem_Click(object sender, EventArgs e) // Opcion para Agregar Categoria
         {
-
+           var frmAgregarCat = new AgregarCategoria();
+            frmAgregarCat.ShowDialog(); 
         }
         // DESPLEGABLE PARA LISTAR
         private void articulosListarToolStripMenuItem_Click(object sender, EventArgs e) // Opcion para Listar Articulos
@@ -176,6 +177,8 @@ namespace ABMProductos
         }
         private void categoriasListarToolStripMenuItem_Click(object sender, EventArgs e) // Opcion para Listar Categorias
         {
+            var frmListadoCat = new ListadoCategorias();
+            frmListadoCat.ShowDialog();
 
         }
     }

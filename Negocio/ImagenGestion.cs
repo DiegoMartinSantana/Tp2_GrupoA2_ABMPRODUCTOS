@@ -69,5 +69,28 @@ namespace Negocio
 
 
         }
+
+        public void Eliminar(int idart)
+        {
+            var acceso = new AccesoBd();
+
+            try
+            {
+                acceso.setQuery("DELETE  FROM Imagenes WHERE IdArticulo = @IdArt");
+                acceso.setParametro("@IdArt", idart);
+                acceso.ejecutarLectura();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                acceso.cerrarConexion();
+            }
+
+        }
     }
 }

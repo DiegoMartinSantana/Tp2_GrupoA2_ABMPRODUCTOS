@@ -34,7 +34,13 @@
             this.lblHome = new System.Windows.Forms.Label();
             this.menu1 = new System.Windows.Forms.MenuStrip();
             this.agregarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.articuloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.marcaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.categoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.articulosListarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.marcasListarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.categoriasListarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dvgArticulos = new System.Windows.Forms.DataGridView();
             this.btnDetalle = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,18 +56,6 @@
             this.txtFiltradoCriterio = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.picLogo = new System.Windows.Forms.PictureBox();
-            this.articuloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.marcaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.categoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.articulosListarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.marcasListarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.categoriasListarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.marcaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.categoriaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.marcaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.categoriaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menu1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -88,8 +82,6 @@
             this.menu1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.menu1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.agregarToolStripMenuItem,
-            this.modificarToolStripMenuItem,
-            this.eliminarToolStripMenuItem,
             this.listarToolStripMenuItem});
             this.menu1.Location = new System.Drawing.Point(0, 0);
             this.menu1.Name = "menu1";
@@ -107,6 +99,30 @@
             this.agregarToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.agregarToolStripMenuItem.Text = "Agregar";
             // 
+            // articuloToolStripMenuItem
+            // 
+            this.articuloToolStripMenuItem.Image = global::ABMProductos.Properties.Resources.sumar_icono;
+            this.articuloToolStripMenuItem.Name = "articuloToolStripMenuItem";
+            this.articuloToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.articuloToolStripMenuItem.Text = "Articulo";
+            this.articuloToolStripMenuItem.Click += new System.EventHandler(this.articuloToolStripMenuItem_Click);
+            // 
+            // marcaToolStripMenuItem
+            // 
+            this.marcaToolStripMenuItem.Image = global::ABMProductos.Properties.Resources.sumar_icono;
+            this.marcaToolStripMenuItem.Name = "marcaToolStripMenuItem";
+            this.marcaToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.marcaToolStripMenuItem.Text = "Marca";
+            this.marcaToolStripMenuItem.Click += new System.EventHandler(this.marcaToolStripMenuItem_Click);
+            // 
+            // categoriaToolStripMenuItem
+            // 
+            this.categoriaToolStripMenuItem.Image = global::ABMProductos.Properties.Resources.sumar_icono;
+            this.categoriaToolStripMenuItem.Name = "categoriaToolStripMenuItem";
+            this.categoriaToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.categoriaToolStripMenuItem.Text = "Categoria";
+            this.categoriaToolStripMenuItem.Click += new System.EventHandler(this.categoriaToolStripMenuItem_Click);
+            // 
             // listarToolStripMenuItem
             // 
             this.listarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -114,8 +130,32 @@
             this.marcasListarToolStripMenuItem,
             this.categoriasListarToolStripMenuItem});
             this.listarToolStripMenuItem.Name = "listarToolStripMenuItem";
-            this.listarToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
-            this.listarToolStripMenuItem.Text = "Listar";
+            this.listarToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.listarToolStripMenuItem.Text = "Listados";
+            // 
+            // articulosListarToolStripMenuItem
+            // 
+            this.articulosListarToolStripMenuItem.Image = global::ABMProductos.Properties.Resources.lista_icono;
+            this.articulosListarToolStripMenuItem.Name = "articulosListarToolStripMenuItem";
+            this.articulosListarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.articulosListarToolStripMenuItem.Text = "Articulos";
+            this.articulosListarToolStripMenuItem.Click += new System.EventHandler(this.articulosListarToolStripMenuItem_Click);
+            // 
+            // marcasListarToolStripMenuItem
+            // 
+            this.marcasListarToolStripMenuItem.Image = global::ABMProductos.Properties.Resources.lista_icono;
+            this.marcasListarToolStripMenuItem.Name = "marcasListarToolStripMenuItem";
+            this.marcasListarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.marcasListarToolStripMenuItem.Text = "Marcas";
+            this.marcasListarToolStripMenuItem.Click += new System.EventHandler(this.marcasListarToolStripMenuItem_Click);
+            // 
+            // categoriasListarToolStripMenuItem
+            // 
+            this.categoriasListarToolStripMenuItem.Image = global::ABMProductos.Properties.Resources.lista_icono;
+            this.categoriasListarToolStripMenuItem.Name = "categoriasListarToolStripMenuItem";
+            this.categoriasListarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.categoriasListarToolStripMenuItem.Text = "Categorias";
+            this.categoriasListarToolStripMenuItem.Click += new System.EventHandler(this.categoriasListarToolStripMenuItem_Click);
             // 
             // dvgArticulos
             // 
@@ -260,96 +300,6 @@
             this.picLogo.TabIndex = 15;
             this.picLogo.TabStop = false;
             // 
-            // articuloToolStripMenuItem
-            // 
-            this.articuloToolStripMenuItem.Image = global::ABMProductos.Properties.Resources.sumar_icono;
-            this.articuloToolStripMenuItem.Name = "articuloToolStripMenuItem";
-            this.articuloToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.articuloToolStripMenuItem.Text = "Articulo";
-            this.articuloToolStripMenuItem.Click += new System.EventHandler(this.articuloToolStripMenuItem_Click);
-            // 
-            // marcaToolStripMenuItem
-            // 
-            this.marcaToolStripMenuItem.Image = global::ABMProductos.Properties.Resources.sumar_icono;
-            this.marcaToolStripMenuItem.Name = "marcaToolStripMenuItem";
-            this.marcaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.marcaToolStripMenuItem.Text = "Marca";
-            this.marcaToolStripMenuItem.Click += new System.EventHandler(this.marcaToolStripMenuItem_Click);
-            // 
-            // categoriaToolStripMenuItem
-            // 
-            this.categoriaToolStripMenuItem.Image = global::ABMProductos.Properties.Resources.sumar_icono;
-            this.categoriaToolStripMenuItem.Name = "categoriaToolStripMenuItem";
-            this.categoriaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.categoriaToolStripMenuItem.Text = "Categoria";
-            this.categoriaToolStripMenuItem.Click += new System.EventHandler(this.categoriaToolStripMenuItem_Click);
-            // 
-            // articulosListarToolStripMenuItem
-            // 
-            this.articulosListarToolStripMenuItem.Image = global::ABMProductos.Properties.Resources.lista_icono;
-            this.articulosListarToolStripMenuItem.Name = "articulosListarToolStripMenuItem";
-            this.articulosListarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.articulosListarToolStripMenuItem.Text = "Articulos";
-            this.articulosListarToolStripMenuItem.Click += new System.EventHandler(this.articulosListarToolStripMenuItem_Click);
-            // 
-            // marcasListarToolStripMenuItem
-            // 
-            this.marcasListarToolStripMenuItem.Image = global::ABMProductos.Properties.Resources.lista_icono;
-            this.marcasListarToolStripMenuItem.Name = "marcasListarToolStripMenuItem";
-            this.marcasListarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.marcasListarToolStripMenuItem.Text = "Marcas";
-            this.marcasListarToolStripMenuItem.Click += new System.EventHandler(this.marcasListarToolStripMenuItem_Click);
-            // 
-            // categoriasListarToolStripMenuItem
-            // 
-            this.categoriasListarToolStripMenuItem.Image = global::ABMProductos.Properties.Resources.lista_icono;
-            this.categoriasListarToolStripMenuItem.Name = "categoriasListarToolStripMenuItem";
-            this.categoriasListarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.categoriasListarToolStripMenuItem.Text = "Categorias";
-            this.categoriasListarToolStripMenuItem.Click += new System.EventHandler(this.categoriasListarToolStripMenuItem_Click);
-            // 
-            // modificarToolStripMenuItem
-            // 
-            this.modificarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.marcaToolStripMenuItem1,
-            this.categoriaToolStripMenuItem1});
-            this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
-            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
-            this.modificarToolStripMenuItem.Text = "Modificar";
-            // 
-            // marcaToolStripMenuItem1
-            // 
-            this.marcaToolStripMenuItem1.Name = "marcaToolStripMenuItem1";
-            this.marcaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.marcaToolStripMenuItem1.Text = "Marca";
-            // 
-            // categoriaToolStripMenuItem1
-            // 
-            this.categoriaToolStripMenuItem1.Name = "categoriaToolStripMenuItem1";
-            this.categoriaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.categoriaToolStripMenuItem1.Text = "Categoria";
-            // 
-            // eliminarToolStripMenuItem
-            // 
-            this.eliminarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.marcaToolStripMenuItem2,
-            this.categoriaToolStripMenuItem2});
-            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
-            this.eliminarToolStripMenuItem.Text = "Eliminar";
-            // 
-            // marcaToolStripMenuItem2
-            // 
-            this.marcaToolStripMenuItem2.Name = "marcaToolStripMenuItem2";
-            this.marcaToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
-            this.marcaToolStripMenuItem2.Text = "Marca";
-            // 
-            // categoriaToolStripMenuItem2
-            // 
-            this.categoriaToolStripMenuItem2.Name = "categoriaToolStripMenuItem2";
-            this.categoriaToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
-            this.categoriaToolStripMenuItem2.Text = "Categoria";
-            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -417,12 +367,6 @@
         private System.Windows.Forms.ToolStripMenuItem articuloToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem marcaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem categoriaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem marcaToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem categoriaToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem marcaToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem categoriaToolStripMenuItem2;
     }
 }
 
