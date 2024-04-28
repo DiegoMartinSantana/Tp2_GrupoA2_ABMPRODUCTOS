@@ -38,18 +38,102 @@ namespace ABMProductos
 
             try
             {
-                DialogResult respuesta = MessageBox.Show("¿Está seguro de que desea eliminar la marca de forma permanente?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                if (respuesta == DialogResult.Yes)
+                if(dgvListaDeMarcas.CurrentRow != null)
                 {
                     seleccionado = (Marca)dgvListaDeMarcas.CurrentRow.DataBoundItem;
-                    marGestion.Eliminar(seleccionado.Id);
-                    Cargar();
+
+                    if (marGestion.ExistenciaArticulos(seleccionado.Id))
+                    {
+                        //Verdadero si existe
+                        MessageBox.Show("No es posible eliminar una marca con articulos asociados.","Error",MessageBoxButtons.OK ,MessageBoxIcon.Error);
+                        return;
+                    }
+                    else
+                    {
+                        DialogResult respuesta = MessageBox.Show("¿Está seguro de que desea eliminar la marca de forma permanente?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                        if (respuesta == DialogResult.Yes)
+                        {
+                            seleccionado = (Marca)dgvListaDeMarcas.CurrentRow.DataBoundItem;
+                            marGestion.Eliminar(seleccionado.Id);
+                            Cargar();
+                        }
+                    }
                 }
+                else
+                {
+                    MessageBox.Show("No ha selecionado ninguna categoria");
+                }
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+            }
+        }
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (dgvListaDeMarcas.CurrentRow != null)
+            {
+                lblNombre.Visible = true;
+                txtNombre.Visible = true;
+                btnGuardar.Visible = true;
+                btnCancelar.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("No ha selecionado ninguna categoria");
+            }
+        }
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            lblNombre.Visible = false;
+            txtNombre.Visible = false;
+            btnGuardar.Visible = false;
+            btnCancelar.Visible = false;
+        }
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvListaDeMarcas.CurrentRow != null)
+                {
+                    Marca seleccionada = (Marca)dgvListaDeMarcas.CurrentRow.DataBoundItem;
+
+                    if (string.IsNullOrEmpty(txtNombre.Text))
+                    {
+                        lblVacioModificar.Visible = true;
+                        return;
+                    }
+                    else
+                    {
+                        lblVacioModificar.Visible = false;
+
+                        // Crear una nueva instancia de la marca con la descripción modificada
+                        Marca marcaModificada = new Marca
+                        {
+                            Id = seleccionada.Id,
+                            Descripcion = txtNombre.Text
+                        };
+
+                        MarcaGestion marGestion = new MarcaGestion();
+                        marGestion.Editar(marcaModificada); // Llamar al método Editar con la marca modificada
+                        Cargar();
+                    }
+
+                    lblNombre.Visible = false;
+                    txtNombre.Visible = false;
+                    btnGuardar.Visible = false;
+                    btnCancelar.Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("No ha seleccionado ninguna marca.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al intentar modificar la marca");
             }
         }
     }

@@ -16,8 +16,8 @@ namespace Negocio
             try
             {
                 Acceso.setQuery("UPDATE MARCAS SET Descripcion = @desc WHERE Id = @id");
-                Acceso.setParametro("desc",marcaEdit.Descripcion);
                 Acceso.setParametro("id", marcaEdit.Id);
+                Acceso.setParametro("desc", marcaEdit.Descripcion);
                 Acceso.ejecutarAccion();
             }
             catch (Exception ex)
@@ -61,19 +61,17 @@ namespace Negocio
             {
                 Acceso.setQuery("SELECT TOP(1) Nombre FROM Articulos WHERE IdMarca = @idmarca"); // Con que exista uno ya alcanza para no permitir borrar
                 Acceso.setParametro("idmarca", idMarca);
-                Acceso.ejecutarAccion();
+                Acceso.ejecutarLectura();
 
-                while (Acceso.Lector.Read())
+                // Verificar si el lector tiene alguna fila
+                if (Acceso.Lector.HasRows)
                 {
-                    string aux = (string)Acceso.Lector["Nombre"];
-
-                    if (string.IsNullOrEmpty(aux))
-                    {
-                        return false;
-                    }
+                    return true; // Hay al menos un artículo asociado a la marca
                 }
-
-                return true;
+                else
+                {
+                    return false; // No hay ningún artículo asociado a la marca
+                }
             }
             catch (Exception ex)
             {
