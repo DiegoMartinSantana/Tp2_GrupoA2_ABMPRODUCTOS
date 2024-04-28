@@ -52,6 +52,12 @@
     <Compile Include="Agregar.Designer.cs">
       <DependentUpon>Agregar.cs</DependentUpon>
     </Compile>
+    <Compile Include="AgregarMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarMarca.Designer.cs">
+      <DependentUpon>AgregarMarca.cs</DependentUpon>
+    </Compile>
     <Compile Include="Detalle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,12 @@
     <Compile Include="Listar.Designer.cs">
       <DependentUpon>Listar.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListarMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListarMarca.Designer.cs">
+      <DependentUpon>ListarMarca.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modificar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +94,9 @@
     <EmbeddedResource Include="Agregar.resx">
       <DependentUpon>Agregar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AgregarMarca.resx">
+      <DependentUpon>AgregarMarca.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Detalle.resx">
       <DependentUpon>Detalle.cs</DependentUpon>
     </EmbeddedResource>
@@ -91,6 +106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Listar.resx">
       <DependentUpon>Listar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListarMarca.resx">
+      <DependentUpon>ListarMarca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modificar.resx">
       <DependentUpon>Modificar.cs</DependentUpon>
@@ -130,6 +148,15 @@
       <Project>{5d0b3025-e083-4a82-890f-19d292af2323}</Project>
       <Name>Negocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lista_icono.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sumar_icono.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\agregar_icono.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

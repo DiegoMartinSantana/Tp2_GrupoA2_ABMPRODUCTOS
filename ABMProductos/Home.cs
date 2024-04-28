@@ -10,7 +10,6 @@ namespace ABMProductos
         {
             InitializeComponent();
         }
-        
         private List<Articulo> ListArticulos;
         
         private void Form1_Load(object sender, EventArgs e)
@@ -26,49 +25,43 @@ namespace ABMProductos
 
 
         }
-        
         public void Cargar()
         {
             ArticuloGestion artGestion = new ArticuloGestion();
             ListArticulos = artGestion.Listado();
             dvgArticulos.DataSource = ListArticulos;
         }
-
-        private void agregarArticuloToolStripMenuItem_Click(object sender, EventArgs e)
+        public void OcultarColumnas()
         {
+            dvgArticulos.Columns["Id"].Visible = false;
+            dvgArticulos.Columns["Codigo"].Visible = false;
+            dvgArticulos.Columns["Descripcion"].Visible = false;
         }
-        
-        private void articuloiToolStripMenuItem_Click(object sender, EventArgs e)
+        // BUSCAR ARTICULO
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            var Agregar = new Agregar();
-            Agregar.ShowDialog();
+            var acceso = new ArticuloGestion();
+            string filtro = txtBuscar.Text;
+
+            List<Articulo> listFiltrada;
+
+            if (filtro.Length > 3)
+            {
+                //realizo busqueda 
+                listFiltrada = ListArticulos.FindAll(Item => Item.Nombre.ToUpper().Contains(filtro.ToUpper()));
+            }
+            else
+            {
+
+                listFiltrada = ListArticulos;
+            }
+
+            dvgArticulos.DataSource = null; // piso el valor con nulo para limpiarla
+            dvgArticulos.DataSource = listFiltrada;
+            OcultarColumnas();
+
 
         }
-
-        private void btnDetalle_Click(object sender, EventArgs e)
-        {
-            Articulo seleccionado;
-            seleccionado = (Articulo)dvgArticulos.CurrentRow.DataBoundItem;
-
-            var Detalle = new Detalle(seleccionado);
-            Detalle.ShowDialog();
-        }
-
-        private void verArticulosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var Listar = new Listar();
-            Listar.ShowDialog();
-        }
-
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            Articulo seleccionado;
-            seleccionado = (Articulo)dvgArticulos.CurrentRow.DataBoundItem;
-
-            var Modificar = new Modificar(seleccionado);
-            Modificar.ShowDialog();
-        }
-
         private void cbo1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -93,8 +86,8 @@ namespace ABMProductos
             }
 
         }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
+        // BOTONES
+        private void btnBuscar_Click(object sender, EventArgs e) // Boton para buscar Articulo
         {
             try
             {
@@ -113,46 +106,6 @@ namespace ABMProductos
             }
 
         }
-
-        private void btnRefrescar_Click(object sender, EventArgs e)
-        {
-            var Acceso = new ArticuloGestion();
-            dvgArticulos.DataSource = Acceso.Listado();
-
-        }
-
-        private void txtBuscar_TextChanged(object sender, EventArgs e)
-        {
-            var acceso = new ArticuloGestion();
-            string filtro = txtBuscar.Text;
-
-            List<Articulo> listFiltrada;
-
-            if (filtro.Length > 3)
-            {
-                //realizo busqueda 
-                listFiltrada= ListArticulos.FindAll(Item => Item.Nombre.ToUpper().Contains(filtro.ToUpper()));  
-            }
-            else
-            {
-
-                listFiltrada = ListArticulos;
-            }
-
-            dvgArticulos.DataSource = null; // piso el valor con nulo para limpiarla
-            dvgArticulos.DataSource = listFiltrada;
-            OcultarColumnas();
-
-
-        }
-        
-        public void OcultarColumnas()
-        {
-            dvgArticulos.Columns["Id"].Visible = false;
-            dvgArticulos.Columns["Codigo"].Visible =false;
-            dvgArticulos.Columns["Descripcion"].Visible = false;
-        }
-        
         private void btnEliminar_Click(object sender, EventArgs e) // Boton para eliminar Articulo
         {
             ArticuloGestion artGestion = new ArticuloGestion();
@@ -173,6 +126,57 @@ namespace ABMProductos
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+        private void btnModificar_Click(object sender, EventArgs e) // Boton para modificar Articulo
+        {
+            Articulo seleccionado;
+            seleccionado = (Articulo)dvgArticulos.CurrentRow.DataBoundItem;
+
+            var Modificar = new Modificar(seleccionado);
+            Modificar.ShowDialog();
+        }
+        private void btnRefrescar_Click(object sender, EventArgs e) // Boton para refrescar cuadro de busqueda de Articulos
+        {
+            var Acceso = new ArticuloGestion();
+            dvgArticulos.DataSource = Acceso.Listado();
+        }
+        private void btnDetalle_Click(object sender, EventArgs e) // Boton para ver detalles del Arrticulo
+        {
+            Articulo seleccionado;
+            seleccionado = (Articulo)dvgArticulos.CurrentRow.DataBoundItem;
+
+            var Detalle = new Detalle(seleccionado);
+            Detalle.ShowDialog();
+        }
+        // DESPLEGABLES PARA AGREGAR
+        private void articuloToolStripMenuItem_Click(object sender, EventArgs e) // Opcion para Agregar Articulo
+        {
+            var Agregar = new Agregar();
+            Agregar.ShowDialog();
+        }
+        private void marcaToolStripMenuItem_Click(object sender, EventArgs e) // Opcion para Agregar Marca
+        {
+            var frmAgregarMarca = new frmAgregarMarca();
+            frmAgregarMarca.ShowDialog();
+        }
+        private void categoriaToolStripMenuItem_Click(object sender, EventArgs e) // Opcion para Agregar Categoria
+        {
+
+        }
+        // DESPLEGABLE PARA LISTAR
+        private void articulosListarToolStripMenuItem_Click(object sender, EventArgs e) // Opcion para Listar Articulos
+        {
+            var Listar = new Listar();
+            Listar.ShowDialog();
+        }
+        private void marcasListarToolStripMenuItem_Click(object sender, EventArgs e) // Opcion para Listar Marcas
+        {
+            var frmListarMarca = new frmListarMarca();
+            frmListarMarca.ShowDialog();
+        }
+        private void categoriasListarToolStripMenuItem_Click(object sender, EventArgs e) // Opcion para Listar Categorias
+        {
+
         }
     }
 }

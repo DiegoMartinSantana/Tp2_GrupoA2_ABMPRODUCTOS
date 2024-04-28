@@ -9,8 +9,7 @@ namespace Negocio
 {
     public class MarcaGestion
     {
-
-        public void Editar(Marca marcaEdit)
+        public void Editar(Marca marcaEdit) // Modificar Marca
         {
             var Acceso = new AccesoBd();
 
@@ -30,12 +29,9 @@ namespace Negocio
             {
                 Acceso.cerrarConexion();
             }
-
-
         }
 
-
-        public void Eliminar(int id)
+        public void Eliminar(int id) // Eliminar Marca
         {
             var Acceso = new AccesoBd();
 
@@ -56,18 +52,21 @@ namespace Negocio
                 Acceso.cerrarConexion();
             }
         }
-            public bool ExistenciaArticulos(int idMarca)
+
+        public bool ExistenciaArticulos(int idMarca) // Validar existencia de articulos con la Marca incorporada
         {
             var Acceso = new AccesoBd();
 
             try
             {
-                Acceso.setQuery("SELECT TOP(1) Nombre FROM Articulos WHERE IdMarca = @idmarca"); // con que exista uno ya alcanza para no permitir borrar
+                Acceso.setQuery("SELECT TOP(1) Nombre FROM Articulos WHERE IdMarca = @idmarca"); // Con que exista uno ya alcanza para no permitir borrar
                 Acceso.setParametro("idmarca", idMarca);
                 Acceso.ejecutarAccion();
+
                 while (Acceso.Lector.Read())
                 {
                     string aux = (string)Acceso.Lector["Nombre"];
+
                     if (string.IsNullOrEmpty(aux))
                     {
                         return false;
@@ -75,8 +74,6 @@ namespace Negocio
                 }
 
                 return true;
-
-
             }
             catch (Exception ex)
             {
@@ -87,9 +84,9 @@ namespace Negocio
             {
                 Acceso.cerrarConexion();
             }
-
         }
-        public void Add(Marca marca)
+
+        public void Add(Marca marca) // Agregar Marca
         {
             var Acceso = new AccesoBd();
 
@@ -112,7 +109,7 @@ namespace Negocio
 
         }
 
-        public List<Marca> Listado()
+        public List<Marca> Listado() // Listar Marcas
         {
             var Acceso = new AccesoBd();
 
