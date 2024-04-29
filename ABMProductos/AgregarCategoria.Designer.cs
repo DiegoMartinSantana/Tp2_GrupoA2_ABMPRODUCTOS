@@ -114,6 +114,7 @@
             this.Controls.Add(this.lblAgregarCat);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AgregarCategoria";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AgregarCategoria";
             this.ResumeLayout(false);
             this.PerformLayout();

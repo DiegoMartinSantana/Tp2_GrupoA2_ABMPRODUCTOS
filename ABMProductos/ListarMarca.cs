@@ -71,7 +71,7 @@ namespace ABMProductos
                 MessageBox.Show(ex.ToString());
             }
         }
-        private void btnModificar_Click(object sender, EventArgs e)
+        private void btnModificar_Click(object sender, EventArgs e) // Boton para modificar una marca
         {
             if (dgvListaDeMarcas.CurrentRow != null)
             {
@@ -85,14 +85,14 @@ namespace ABMProductos
                 MessageBox.Show("No ha selecionado ninguna categoria");
             }
         }
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e) // Boton para cancelar 
         {
             lblNombre.Visible = false;
             txtNombre.Visible = false;
             btnGuardar.Visible = false;
             btnCancelar.Visible = false;
         }
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void btnGuardar_Click(object sender, EventArgs e) // Boton para guardar la modificacion de una marca
         {
             try
             {
