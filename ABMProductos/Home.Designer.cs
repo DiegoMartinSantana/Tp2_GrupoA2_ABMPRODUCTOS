@@ -44,11 +44,10 @@
             this.dvgArticulos = new System.Windows.Forms.DataGridView();
             this.btnDetalle = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbo1 = new System.Windows.Forms.ComboBox();
             this.lblFiltrar = new System.Windows.Forms.Label();
             this.lblBuscar = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.cbo2 = new System.Windows.Forms.ComboBox();
+            this.cboCriterio = new System.Windows.Forms.ComboBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -56,6 +55,8 @@
             this.txtFiltradoCriterio = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.picLogo = new System.Windows.Forms.PictureBox();
+            this.cboCampo = new System.Windows.Forms.ComboBox();
+            this.lblNofiltro = new System.Windows.Forms.Label();
             this.menu1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -191,16 +192,6 @@
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 5;
             // 
-            // cbo1
-            // 
-            this.cbo1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbo1.FormattingEnabled = true;
-            this.cbo1.Location = new System.Drawing.Point(56, 134);
-            this.cbo1.Name = "cbo1";
-            this.cbo1.Size = new System.Drawing.Size(121, 21);
-            this.cbo1.TabIndex = 1;
-            this.cbo1.SelectedIndexChanged += new System.EventHandler(this.cbo1_SelectedIndexChanged);
-            // 
             // lblFiltrar
             // 
             this.lblFiltrar.AutoSize = true;
@@ -227,13 +218,14 @@
             this.txtBuscar.TabIndex = 0;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
-            // cbo2
+            // cboCriterio
             // 
-            this.cbo2.FormattingEnabled = true;
-            this.cbo2.Location = new System.Drawing.Point(224, 134);
-            this.cbo2.Name = "cbo2";
-            this.cbo2.Size = new System.Drawing.Size(121, 21);
-            this.cbo2.TabIndex = 2;
+            this.cboCriterio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCriterio.FormattingEnabled = true;
+            this.cboCriterio.Location = new System.Drawing.Point(224, 134);
+            this.cboCriterio.Name = "cboCriterio";
+            this.cboCriterio.Size = new System.Drawing.Size(121, 21);
+            this.cboCriterio.TabIndex = 2;
             // 
             // btnEliminar
             // 
@@ -300,23 +292,45 @@
             this.picLogo.TabIndex = 15;
             this.picLogo.TabStop = false;
             // 
+            // cboCampo
+            // 
+            this.cboCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCampo.FormattingEnabled = true;
+            this.cboCampo.Location = new System.Drawing.Point(56, 134);
+            this.cboCampo.Name = "cboCampo";
+            this.cboCampo.Size = new System.Drawing.Size(121, 21);
+            this.cboCampo.TabIndex = 16;
+            this.cboCampo.SelectedIndexChanged += new System.EventHandler(this.cboCampo_SelectedIndexChanged);
+            // 
+            // lblNofiltro
+            // 
+            this.lblNofiltro.AutoSize = true;
+            this.lblNofiltro.ForeColor = System.Drawing.Color.Red;
+            this.lblNofiltro.Location = new System.Drawing.Point(383, 161);
+            this.lblNofiltro.Name = "lblNofiltro";
+            this.lblNofiltro.Size = new System.Drawing.Size(172, 13);
+            this.lblNofiltro.TabIndex = 17;
+            this.lblNofiltro.Text = "*No se han llenado todos los filtros.";
+            this.lblNofiltro.Visible = false;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(834, 511);
+            this.Controls.Add(this.lblNofiltro);
+            this.Controls.Add(this.cboCampo);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtFiltradoCriterio);
             this.Controls.Add(this.btnRefrescar);
             this.Controls.Add(this.picLogo);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.cbo2);
+            this.Controls.Add(this.cboCriterio);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.lblBuscar);
             this.Controls.Add(this.lblFiltrar);
-            this.Controls.Add(this.cbo1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.dvgArticulos);
@@ -350,7 +364,7 @@
         private System.Windows.Forms.Label lblFiltrar;
         private System.Windows.Forms.Label lblBuscar;
         private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.ComboBox cbo2;
+        private System.Windows.Forms.ComboBox cboCriterio;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.PictureBox picLogo;
@@ -358,7 +372,6 @@
         private System.Windows.Forms.Button btnRefrescar;
         private System.Windows.Forms.TextBox txtFiltradoCriterio;
         private System.Windows.Forms.Button btnBuscar;
-        public System.Windows.Forms.ComboBox cbo1;
         private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem articulosListarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem marcasListarToolStripMenuItem;
@@ -367,6 +380,8 @@
         private System.Windows.Forms.ToolStripMenuItem articuloToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem marcaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem categoriaToolStripMenuItem;
+        private System.Windows.Forms.ComboBox cboCampo;
+        private System.Windows.Forms.Label lblNofiltro;
     }
 }
 

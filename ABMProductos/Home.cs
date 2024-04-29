@@ -11,17 +11,17 @@ namespace ABMProductos
             InitializeComponent();
         }
         private List<Articulo> ListArticulos;
-        
+
         private void Form1_Load(object sender, EventArgs e)
         {
             Cargar();
 
             OcultarColumnas();
 
-
-            cbo1.Items.Add("Categoria");
-            cbo1.Items.Add("Precio");
-            cbo1.Items.Add("Marca");
+            //cboCampo.Items.Clear(); 
+            cboCampo.Items.Add("Categoria");
+            cboCampo.Items.Add("Precio");
+            cboCampo.Items.Add("Marca");
 
 
         }
@@ -62,47 +62,31 @@ namespace ABMProductos
 
 
         }
-        private void cbo1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            string campo = cbo1.SelectedItem.ToString();
-            if (campo == "Precio")
-            {
-                cbo2.Items.Clear();
-
-                cbo2.Items.Add("Mayor a :");
-                cbo2.Items.Add("Menor a :");
-                cbo2.Items.Add("Igual :");
-
-            }
-            else
-            {
-                cbo2.Items.Clear();
-
-                cbo2.Items.Add("Contiene :");
-                cbo2.Items.Add("Termina con :");
-                cbo2.Items.Add("Empieza con :");
-
-            }
-
-        }
+       
         // BOTONES
         private void btnBuscar_Click(object sender, EventArgs e) // Boton para buscar Articulo
         {
-            try
-            {
-                var Acceso = new ArticuloGestion();
-                dvgArticulos.DataSource = Acceso.Listado();
-                string campo, criterio, filtro;
-                campo = cbo1.SelectedItem.ToString();
-                criterio = cbo2.SelectedItem.ToString();
-                filtro = txtFiltradoCriterio.Text;
-                dvgArticulos.DataSource = Acceso.FiltroCriterios(campo, criterio, filtro);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Se ha producido un Error, intente nuevamente mas tarde.");
+            if (cboCampo.SelectedItem != null && cboCriterio.SelectedItem != null && !(string.IsNullOrEmpty(txtFiltradoCriterio.Text))){
+                lblNofiltro.Visible = false;
+                try
+                {
+                    var Acceso = new ArticuloGestion();
+                    dvgArticulos.DataSource = Acceso.Listado();
+                    string campo, criterio, filtro;
+                    campo = cboCampo.SelectedItem.ToString();
+                    criterio = cboCriterio.SelectedItem.ToString();
+                    filtro = txtFiltradoCriterio.Text;
+                    dvgArticulos.DataSource = Acceso.FiltroCriterios(campo, criterio, filtro);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Se ha producido un Error, intente nuevamente mas tarde.");
 
+                }
+            }
+            else
+            {
+                lblNofiltro.Visible = true;
             }
 
         }
@@ -113,13 +97,19 @@ namespace ABMProductos
             try
             {
                 DialogResult respuesta = MessageBox.Show("¿Está seguro de que desea eliminar el artículo de forma permanente?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                
-                if(respuesta == DialogResult.Yes)
+
+                if (respuesta == DialogResult.Yes)
                 {
-                    seleccionado = (Articulo)dvgArticulos.CurrentRow.DataBoundItem;
-                    artGestion.eliminar(seleccionado.Id);
-                
-                    Cargar();
+                    if (dvgArticulos.CurrentRow != null)
+                    {
+                        seleccionado = (Articulo)dvgArticulos.CurrentRow.DataBoundItem;
+                        artGestion.eliminar(seleccionado.Id);
+                        Cargar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se ha seleccionado ningun articulo");
+                    }
                 }
             }
             catch (Exception ex)
@@ -129,13 +119,21 @@ namespace ABMProductos
         }
         private void btnModificar_Click(object sender, EventArgs e) // Boton para modificar Articulo
         {
-            Articulo seleccionado;
-            seleccionado = (Articulo)dvgArticulos.CurrentRow.DataBoundItem;
+            if (dvgArticulos.CurrentRow != null)
+            {
 
-            var Modificar = new Modificar(seleccionado);
-            Modificar.ShowDialog();
+                Articulo seleccionado;
+                seleccionado = (Articulo)dvgArticulos.CurrentRow.DataBoundItem;
 
-            Cargar();
+                var Modificar = new Modificar(seleccionado);
+                Modificar.ShowDialog();
+
+                Cargar();
+            }
+            else
+            {
+                MessageBox.Show("No se ha seleccionado ningun articulo");
+            }
         }
         private void btnRefrescar_Click(object sender, EventArgs e) // Boton para refrescar cuadro de busqueda de Articulos
         {
@@ -145,10 +143,17 @@ namespace ABMProductos
         private void btnDetalle_Click(object sender, EventArgs e) // Boton para ver detalles del Arrticulo
         {
             Articulo seleccionado;
-            seleccionado = (Articulo)dvgArticulos.CurrentRow.DataBoundItem;
+            if (dvgArticulos.CurrentRow != null)
+            {
+                seleccionado = (Articulo)dvgArticulos.CurrentRow.DataBoundItem;
+                var Detalle = new Detalle(seleccionado);
+                Detalle.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No se ha seleccionado ningun articulo");
+            }
 
-            var Detalle = new Detalle(seleccionado);
-            Detalle.ShowDialog();
         }
         // DESPLEGABLES PARA AGREGAR
         private void articuloToolStripMenuItem_Click(object sender, EventArgs e) // Opcion para Agregar Articulo
@@ -163,8 +168,8 @@ namespace ABMProductos
         }
         private void categoriaToolStripMenuItem_Click(object sender, EventArgs e) // Opcion para Agregar Categoria
         {
-           var frmAgregarCat = new AgregarCategoria();
-            frmAgregarCat.ShowDialog(); 
+            var frmAgregarCat = new AgregarCategoria();
+            frmAgregarCat.ShowDialog();
         }
         // DESPLEGABLE PARA LISTAR
         private void articulosListarToolStripMenuItem_Click(object sender, EventArgs e) // Opcion para Listar Articulos
@@ -182,6 +187,29 @@ namespace ABMProductos
             var frmListadoCat = new ListadoCategorias();
             frmListadoCat.ShowDialog();
 
+        }
+
+        private void cboCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string campo = cboCampo.SelectedItem.ToString();
+            if (campo == "Precio")
+            {
+                cboCriterio.Items.Clear();
+
+                cboCriterio.Items.Add("Mayor a :");
+                cboCriterio.Items.Add("Menor a :");
+                cboCriterio.Items.Add("Igual :");
+
+            }
+            else
+            {
+                cboCriterio.Items.Clear();
+
+                cboCriterio.Items.Add("Contiene :");
+                cboCriterio.Items.Add("Termina con :");
+                cboCriterio.Items.Add("Empieza con :");
+
+            }
         }
     }
 }
