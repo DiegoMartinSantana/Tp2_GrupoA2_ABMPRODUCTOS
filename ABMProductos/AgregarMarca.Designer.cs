@@ -34,6 +34,7 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.lblVacio = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblAgregarMarca
@@ -49,7 +50,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(169, 90);
+            this.txtNombre.Location = new System.Drawing.Point(152, 90);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(111, 20);
             this.txtNombre.TabIndex = 0;
@@ -58,7 +59,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.ForeColor = System.Drawing.Color.Black;
-            this.lblNombre.Location = new System.Drawing.Point(110, 93);
+            this.lblNombre.Location = new System.Drawing.Point(93, 93);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(53, 13);
             this.lblNombre.TabIndex = 4;
@@ -88,12 +89,25 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // lblVacio
+            // 
+            this.lblVacio.AutoSize = true;
+            this.lblVacio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVacio.ForeColor = System.Drawing.Color.Red;
+            this.lblVacio.Location = new System.Drawing.Point(269, 93);
+            this.lblVacio.Name = "lblVacio";
+            this.lblVacio.Size = new System.Drawing.Size(11, 13);
+            this.lblVacio.TabIndex = 6;
+            this.lblVacio.Text = "*";
+            this.lblVacio.Visible = false;
+            // 
             // frmAgregarMarca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.ClientSize = new System.Drawing.Size(419, 540);
+            this.ClientSize = new System.Drawing.Size(398, 228);
+            this.Controls.Add(this.lblVacio);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtNombre);
@@ -102,9 +116,9 @@
             this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(435, 579);
+            this.MaximumSize = new System.Drawing.Size(414, 267);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(435, 579);
+            this.MinimumSize = new System.Drawing.Size(414, 267);
             this.Name = "frmAgregarMarca";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Marca";
@@ -121,5 +135,6 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label lblVacio;
     }
 }

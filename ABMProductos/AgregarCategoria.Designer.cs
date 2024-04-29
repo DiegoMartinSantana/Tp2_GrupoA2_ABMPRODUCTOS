@@ -63,7 +63,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(168, 107);
+            this.txtNombre.Location = new System.Drawing.Point(151, 107);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(111, 20);
             this.txtNombre.TabIndex = 0;
@@ -72,7 +72,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.ForeColor = System.Drawing.Color.Black;
-            this.lblNombre.Location = new System.Drawing.Point(109, 110);
+            this.lblNombre.Location = new System.Drawing.Point(92, 110);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(53, 13);
             this.lblNombre.TabIndex = 4;
@@ -94,7 +94,7 @@
             this.lblVacio.AutoSize = true;
             this.lblVacio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVacio.ForeColor = System.Drawing.Color.Red;
-            this.lblVacio.Location = new System.Drawing.Point(285, 110);
+            this.lblVacio.Location = new System.Drawing.Point(268, 110);
             this.lblVacio.Name = "lblVacio";
             this.lblVacio.Size = new System.Drawing.Size(11, 13);
             this.lblVacio.TabIndex = 5;
@@ -105,7 +105,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(419, 540);
+            this.ClientSize = new System.Drawing.Size(398, 228);
             this.Controls.Add(this.lblVacio);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
@@ -113,7 +113,10 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblAgregarCat);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(414, 267);
+            this.MinimumSize = new System.Drawing.Size(414, 267);
             this.Name = "AgregarCategoria";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AgregarCategoria";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -23,6 +23,13 @@ namespace ABMProductos
         }
         private void btnGuardar_Click(object sender, EventArgs e) // Boton de Guardar
         {
+
+            if (string.IsNullOrEmpty(txtNombre.Text) || txtNombre.Text.Length < 3)
+            {
+                lblVacio.Visible = true;
+                lblVacio.Text = "Minimo de 3 Caracteres.";
+                return;
+            }
             Marca marca = new Marca();
             MarcaGestion marcaGestion = new MarcaGestion();
             try

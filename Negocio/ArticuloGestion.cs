@@ -36,7 +36,8 @@ namespace Negocio
 			{
 				Acceso.cerrarConexion();
 			}
-        }public void Modificar(Articulo Art) // Modifica Articulo
+        }
+        public void Modificar(Articulo Art) // Modifica Articulo
         {
             AccesoBd Acceso = new AccesoBd();
 
@@ -229,7 +230,7 @@ namespace Negocio
                 datos.ejecutarAccion();
 
                 var imgGestion = new ImagenGestion();
-                imgGestion.Eliminar(id);
+                imgGestion.EliminarTodas(id);
 
             }
             catch (Exception ex)
@@ -241,6 +242,39 @@ namespace Negocio
             {
                 datos.cerrarConexion();
             }
+
+        }
+
+        public bool ExistenciaCodigo(string codigo)
+        {
+            AccesoBd acceso = new AccesoBd();
+
+            try
+            {
+                acceso.setQuery("SELECT codigo FROM ARTICULOS WHERE Codigo = @cod");
+                acceso.setParametro("@cod", codigo);
+                acceso.ejecutarLectura();
+
+                while (acceso.Lector.Read())
+                {
+                    string aux = (string)acceso.Lector["codigo"];
+                    if (!string.IsNullOrEmpty(aux))
+                    {
+                        return true;
+                    }
+                }
+                
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+               acceso.cerrarConexion();
+            }
+            return false;
 
         }
     }

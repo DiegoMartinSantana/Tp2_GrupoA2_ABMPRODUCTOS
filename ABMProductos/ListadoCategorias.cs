@@ -48,42 +48,50 @@ namespace ABMProductos
             //eliminar categoria
             var gestionCat = new CategoriaGestion();
 
-            Categoria seleccionada;
-            try
-            {
-                if (dgvCat.CurrentRow != null)
-                {
 
-                    seleccionada = (Categoria)dgvCat.CurrentRow.DataBoundItem;
+            DialogResult respuesta = MessageBox.Show("¿Desea eliminar la categoria de forma permanente?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (respuesta == DialogResult.Yes)
+            {
+
+                Categoria seleccionada;
+                try
+                {
+                    if (dgvCat.CurrentRow != null)
+                    {
+
+                        seleccionada = (Categoria)dgvCat.CurrentRow.DataBoundItem;
 
 
                         if (!gestionCat.ExistenciaArticulos(seleccionada.Id))
                         {
-                            
+
                             MessageBox.Show("No es posible eliminar una categoria con articulos asociados.");
                             return;
                         }
                         else
                         {
-                           
+
                             gestionCat.Eliminar(seleccionada.Id);
                             MessageBox.Show("Se ha eliminado correctamente.");
                             CargarDgv(); // actualizamos la lista
 
                         }
-                    
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("No ha selecionado ninguna categoria");
+
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("No ha selecionado ninguna categoria");
 
+                    throw ex;
                 }
             }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
+           
 
         }
         public void OcultarColumnas()
@@ -117,8 +125,11 @@ namespace ABMProductos
                     }
                     else
                     {
+                        var aux = new Categoria();
+                        aux.Id = seleccionada.Id;
+                        aux.Descripcion = txtNombreCat.Text;
                         lblVacioModificar.Visible = false;
-                        gestionCat.Editar(seleccionada);
+                        gestionCat.Editar(aux);
                         CargarDgv();
                     }
                 }

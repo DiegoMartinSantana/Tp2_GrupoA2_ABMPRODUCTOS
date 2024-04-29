@@ -38,7 +38,6 @@
             this.lblCategoria = new System.Windows.Forms.Label();
             this.pictureImg = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.progressBarAgregar = new System.Windows.Forms.ProgressBar();
             this.txtCodProducto = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.txtUrlImg = new System.Windows.Forms.TextBox();
@@ -48,6 +47,11 @@
             this.cboCategoria = new System.Windows.Forms.ComboBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.lblErrorImg = new System.Windows.Forms.Label();
+            this.progressBarAgregar = new System.Windows.Forms.ProgressBar();
+            this.lblPrecioNumerico = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.lblCodigoExistente = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureImg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,7 +89,7 @@
             // 
             this.lblUrl.AutoSize = true;
             this.lblUrl.ForeColor = System.Drawing.Color.Black;
-            this.lblUrl.Location = new System.Drawing.Point(39, 340);
+            this.lblUrl.Location = new System.Drawing.Point(39, 333);
             this.lblUrl.Name = "lblUrl";
             this.lblUrl.Size = new System.Drawing.Size(79, 13);
             this.lblUrl.TabIndex = 15;
@@ -124,9 +128,9 @@
             // pictureImg
             // 
             this.pictureImg.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.pictureImg.Location = new System.Drawing.Point(42, 370);
+            this.pictureImg.Location = new System.Drawing.Point(97, 390);
             this.pictureImg.Name = "pictureImg";
-            this.pictureImg.Size = new System.Drawing.Size(231, 129);
+            this.pictureImg.Size = new System.Drawing.Size(282, 168);
             this.pictureImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureImg.TabIndex = 8;
             this.pictureImg.TabStop = false;
@@ -140,17 +144,6 @@
             this.label8.Size = new System.Drawing.Size(137, 13);
             this.label8.TabIndex = 8;
             this.label8.Text = "COMPLETE LOS CAMPOS";
-            // 
-            // progressBarAgregar
-            // 
-            this.progressBarAgregar.BackColor = System.Drawing.SystemColors.InfoText;
-            this.progressBarAgregar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.progressBarAgregar.ForeColor = System.Drawing.Color.Honeydew;
-            this.progressBarAgregar.Location = new System.Drawing.Point(0, 517);
-            this.progressBarAgregar.Name = "progressBarAgregar";
-            this.progressBarAgregar.Size = new System.Drawing.Size(419, 23);
-            this.progressBarAgregar.TabIndex = 17;
-            this.progressBarAgregar.Value = 50;
             // 
             // txtCodProducto
             // 
@@ -168,7 +161,7 @@
             // 
             // txtUrlImg
             // 
-            this.txtUrlImg.Location = new System.Drawing.Point(152, 333);
+            this.txtUrlImg.Location = new System.Drawing.Point(152, 330);
             this.txtUrlImg.Name = "txtUrlImg";
             this.txtUrlImg.Size = new System.Drawing.Size(198, 20);
             this.txtUrlImg.TabIndex = 6;
@@ -212,11 +205,11 @@
             // 
             this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.btnGuardar.Location = new System.Drawing.Point(298, 476);
+            this.btnGuardar.Location = new System.Drawing.Point(385, 575);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(89, 23);
             this.btnGuardar.TabIndex = 7;
-            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Text = "Agregar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
@@ -233,12 +226,71 @@
             this.lblErrorImg.Text = "*";
             this.lblErrorImg.Visible = false;
             // 
+            // progressBarAgregar
+            // 
+            this.progressBarAgregar.BackColor = System.Drawing.SystemColors.InfoText;
+            this.progressBarAgregar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.progressBarAgregar.ForeColor = System.Drawing.Color.Honeydew;
+            this.progressBarAgregar.Location = new System.Drawing.Point(0, 613);
+            this.progressBarAgregar.Name = "progressBarAgregar";
+            this.progressBarAgregar.Size = new System.Drawing.Size(494, 23);
+            this.progressBarAgregar.TabIndex = 17;
+            this.progressBarAgregar.Value = 50;
+            // 
+            // lblPrecioNumerico
+            // 
+            this.lblPrecioNumerico.AutoSize = true;
+            this.lblPrecioNumerico.ForeColor = System.Drawing.Color.Red;
+            this.lblPrecioNumerico.Location = new System.Drawing.Point(259, 289);
+            this.lblPrecioNumerico.Name = "lblPrecioNumerico";
+            this.lblPrecioNumerico.Size = new System.Drawing.Size(138, 13);
+            this.lblPrecioNumerico.TabIndex = 18;
+            this.lblPrecioNumerico.Text = "Valor numerico unicamente.";
+            this.lblPrecioNumerico.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(40, 353);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(410, 13);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "*Por cada Url a cargar presione Save, el campo debe estar vacio para añadir otra " +
+    "Url.";
+            // 
+            // btnSave
+            // 
+            this.btnSave.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnSave.Location = new System.Drawing.Point(371, 330);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 20;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // lblCodigoExistente
+            // 
+            this.lblCodigoExistente.AutoSize = true;
+            this.lblCodigoExistente.ForeColor = System.Drawing.Color.Red;
+            this.lblCodigoExistente.Location = new System.Drawing.Point(271, 44);
+            this.lblCodigoExistente.Name = "lblCodigoExistente";
+            this.lblCodigoExistente.Size = new System.Drawing.Size(86, 13);
+            this.lblCodigoExistente.TabIndex = 21;
+            this.lblCodigoExistente.Text = "Codigo Existente";
+            this.lblCodigoExistente.Visible = false;
+            // 
             // Agregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.ClientSize = new System.Drawing.Size(419, 540);
+            this.ClientSize = new System.Drawing.Size(494, 636);
+            this.Controls.Add(this.lblCodigoExistente);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblPrecioNumerico);
             this.Controls.Add(this.lblErrorImg);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.cboCategoria);
@@ -261,9 +313,8 @@
             this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(435, 579);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(435, 579);
+            this.MinimumSize = new System.Drawing.Size(477, 609);
             this.Name = "Agregar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar";
@@ -285,7 +336,6 @@
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.PictureBox pictureImg;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ProgressBar progressBarAgregar;
         private System.Windows.Forms.TextBox txtCodProducto;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.TextBox txtUrlImg;
@@ -295,5 +345,10 @@
         private System.Windows.Forms.ComboBox cboCategoria;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label lblErrorImg;
+        private System.Windows.Forms.ProgressBar progressBarAgregar;
+        private System.Windows.Forms.Label lblPrecioNumerico;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Label lblCodigoExistente;
     }
 }

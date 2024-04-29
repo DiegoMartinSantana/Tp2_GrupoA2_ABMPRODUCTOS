@@ -39,6 +39,7 @@ namespace ABMProductos
 
         private void Detalle_Load(object sender, EventArgs e)
         {
+            indiceImagen = 0;
             try
             {
                 txtCodigo.Text = articulo.Codigo.ToString();
@@ -53,11 +54,17 @@ namespace ABMProductos
 
                 if (listImgs.Count > 0)
                 {
-                    indiceImagen = 0;
+                   
                     btnAnterior.Visible = true;
                     btnSiguiente.Visible = true;
-                    CargarImagen(); // le envio la posicion del indice en el listado
-                   
+                    CargarImagen(); 
+
+                }
+                else
+                {
+                    btnAnterior.Visible = false;
+                    btnSiguiente.Visible = false;
+                    CargarImagen();
                 }
 
             }

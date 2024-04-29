@@ -24,20 +24,28 @@ namespace ABMProductos
             return true; // Devuelve true si todos los TextBox tienen contenido
         }
 
+        public static bool decimalValido(string Precio)
+        {
+            decimal PrecioConvertido;
+            bool Convirtio = decimal.TryParse(Precio, out PrecioConvertido); // metodo try parse devuelve true si pudo convertir ok, y el out es para hacer psajes x referencia! porque guarda ahi si pudo convertir.
+            return Convirtio;
 
+        }
 
         public static bool SoloNumeros(string x)
         {
             bool esNumero = true;
+
             foreach (char c in x)
             {
-                if (!char.IsDigit(c))
+                if (char.IsDigit(c) || c == '.' || c == ',')
                 {
-                    esNumero = false;
+                   
+                    esNumero = false; 
                     break;
                 }
             }
-            return esNumero;
+            return esNumero; //false si son todos numeros
         }
 
         public static bool SoloLetras(string x)

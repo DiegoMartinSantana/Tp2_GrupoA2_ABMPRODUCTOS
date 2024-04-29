@@ -22,9 +22,10 @@ namespace Negocio
             try
             {
                 Acceso.setQuery("UPDATE CATEGORIAS SET Descripcion = @desc WHERE Id = @id");
-                Acceso.setParametro("desc", catEdit.Descripcion);
-                Acceso.setParametro("id", catEdit.Id);
+                Acceso.setParametro("@desc", catEdit.Descripcion);
+                Acceso.setParametro("@id", catEdit.Id);
                 Acceso.ejecutarAccion();
+
             }
             catch (Exception ex)
             {

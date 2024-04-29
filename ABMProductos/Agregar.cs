@@ -19,11 +19,11 @@ namespace ABMProductos
             InitializeComponent();
         }
 
-
         List<string> listUrlAdd;
 
         private void Agregar_Load(object sender, EventArgs e)
         {
+            listUrlAdd = new List<string>();
             CategoriaGestion CatGestion = new CategoriaGestion();
             MarcaGestion MarcaGestion = new MarcaGestion();
 
@@ -35,86 +35,93 @@ namespace ABMProductos
             cboMarca.DisplayMember = "Descripcion";
             cboMarca.ValueMember = "Id";
 
-        
+
         }
 
-        public void control(object e)
-        {
-            if(e is ComboBox)
-            {
-
-            }
-        }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            List<Control> list = new List<Control>(); // creo una lista de textbox para agregarle los textboxes que corresponda y luego llamar a la funcion
-                                                      // que valida que los textboxes no contengan valores nulos
-                                                      
+            ValidarCodigo();
+
+            if (!Validaciones.decimalValido(txtPrecio.Text))
+            {
+                lblPrecioNumerico.Text = "Formato Erroneo";
+                lblPrecioNumerico.Visible = true;
+                return;
+            }
+
+            if (Validaciones.SoloNumeros(txtPrecio.Text))
+            {
+                lblPrecioNumerico.Text = "Valor numerico unicamente";
+                lblPrecioNumerico.Visible = true;
+                return;
+            }
+
+            lblPrecioNumerico.Visible = false;
+
+            List<Control> list = new List<Control>();
+            // creo una lista de textbox para agregarle los textboxes que corresponda y luego llamar a la funcion
+            // que valida que los textboxes no contengan valores nulos
+
             list.Add(txtCodProducto);
             list.Add(txtDescripcion);
             list.Add(txtPrecio);
             list.Add(txtNombre);
             list.Add(cboCategoria);
             list.Add(cboMarca);
-          
+            list.Add(txtUrlImg);
 
             ArticuloGestion ArtGestion = new ArticuloGestion();
             var ArticuloAgregar = new Articulo();
 
             if (Validaciones.ValidarTextBoxes(list))
             {
+                try
+                {
+                    //Carga el Articulo con los datos ingresados
+                    ArticuloAgregar.Codigo = txtCodProducto.Text;
+                    ArticuloAgregar.Descripcion = txtDescripcion.Text;
+                    ArticuloAgregar.Precio = decimal.Parse(txtPrecio.Text);
+                    ArticuloAgregar.Nombre = txtNombre.Text;
+                    ArticuloAgregar.Marca = (Marca)cboMarca.SelectedItem;
+                    ArticuloAgregar.Categoria = (Categoria)cboCategoria.SelectedItem;
 
-  
-            try
-            {
-                //Carga el Articulo con los datos ingresados
-                ArticuloAgregar.Codigo = txtCodProducto.Text;
-                ArticuloAgregar.Descripcion = txtDescripcion.Text;
-                ArticuloAgregar.Precio = decimal.Parse(txtPrecio.Text);
-                ArticuloAgregar.Nombre = txtNombre.Text;
-                ArticuloAgregar.Marca = (Marca)cboMarca.SelectedItem;
-                ArticuloAgregar.Categoria = (Categoria)cboCategoria.SelectedItem;
+                    ArtGestion.Add(ArticuloAgregar);
 
+                    var UltimoInsertado = ArtGestion.Listado().Last(); // obtenemos ultimo insertado
 
-                //-------------------------------!
-
-
-                //llamar a Metodo para hacer Insert ARTICULO en BD
-
-
-                //metodo para validar ARTICULO ENTERO + EXISTENCIA DE UNA IMAGEN AL MENOS.
-
-                ArtGestion.Add(ArticuloAgregar);
+                    //llamar a metodo para hacer inserte en TABLA DE IMAGENES
+                    //-------------------------------!
+                    var ImgGestion = new ImagenGestion();
+                    var Img = new Imagen();
 
 
-                var UltimoInsertado = ArtGestion.Listado().Last(); // obtenemos ultimo insertado
 
+                    foreach (var item in listUrlAdd) //recorre la lista de url y guarda!
+                    {
+                        Img.IdArticulo = UltimoInsertado.Id;
+                        Img.UrlImagen = txtUrlImg.Text;
+                        ImgGestion.Add(Img);
 
-                //llamar a metodo para hacer inserte en TABLA DE IMAGENES
-                //-------------------------------!
-                var ImgGestion = new ImagenGestion();
-                var Img = new Imagen() { IdArticulo = UltimoInsertado.Id, UrlImagen = txtUrlImg.Text };
+                    }
 
-                ImgGestion.Add(Img);
+                    MessageBox.Show("Se ha añadido el Articulo correctamente.");
+                    this.Close();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Ha ocurrido un Error, intente nuevamente mas tarde.");
+                    this.Close();
 
-                MessageBox.Show("Se ha añadido el Articulo correctamente.");
-
-            }
-            catch (Exception )
-            {
-                MessageBox.Show("Ha ocurrido un Error, intente nuevamente mas tarde.");
-                this.Close();
-               
-            }
+                }
             }
             else
             {
-              
+                MessageBox.Show("Faltan campos por completar.");
+
             }
 
 
-            this.Close();
 
         }
 
@@ -131,7 +138,7 @@ namespace ABMProductos
                 imgAux.UrlImagen = url;
                 imgAux.IdArticulo = artGestion.Listado().Last().Id; //accede al ultimo id insertado!
 
-                listImgs.Add(imgAux);   
+                listImgs.Add(imgAux);
 
                 imgGestion.Add(imgAux); // añadimos x cada vuelta la imagen a la BD.
 
@@ -139,18 +146,35 @@ namespace ABMProductos
 
 
         }
-        private void txtUrlImg_Leave(object sender, EventArgs e)
+        public bool validarCargaImagen()
         {
             try
             {
                 lblErrorImg.Visible = false;
 
                 pictureImg.Load(txtUrlImg.Text);
+                return true;
 
-                listUrlAdd = new List<string> (); 
+            }
+            catch (Exception)
+            {
+                lblErrorImg.Visible = true;
+                MessageBox.Show("La url proporcionada no se ha podido cargar.");
+                return false;
+            }
+        }
+        private void txtUrlImg_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (validarCargaImagen())
+                {
 
-                listUrlAdd.Add(txtUrlImg.Text); // cada vez que inserta una imagen correctamente, se añade al listado de strings su url.
+                 
 
+                    listUrlAdd.Add(txtUrlImg.Text); // cada vez que inserta una imagen correctamente, se añade al listado de strings su url.
+
+                }
             }
             catch (Exception)
             {
@@ -159,8 +183,36 @@ namespace ABMProductos
             }
         }
 
-      
+        private void btnSave_Click(object sender, EventArgs e)
+        {
 
+        }
+        public bool ValidarCodigo()
+        {
+
+
+            var artGestion = new ArticuloGestion();
+            try
+            {
+
+                if (artGestion.ExistenciaCodigo(txtCodProducto.Text))
+                {
+                    lblCodigoExistente.Visible = true;
+
+                    return false;
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ha ocurrido un Error, intente nuevamente mas tarde.");
+                this.Close();
+
+            }
+            lblCodigoExistente.Visible = false;
+            return true;
+        }
 
     }
+
 }

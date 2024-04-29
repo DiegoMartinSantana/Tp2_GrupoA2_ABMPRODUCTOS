@@ -69,16 +69,42 @@ namespace Negocio
 
 
         }
-
-        public void Eliminar(int idart)
+        public void EliminarTodas(int idart)
         {
             var acceso = new AccesoBd();
 
             try
             {
-                acceso.setQuery("DELETE  FROM Imagenes WHERE IdArticulo = @IdArt");
+                acceso.setQuery("DELETE  FROM Imagenes WHERE IdArticulo = @IdArt ");
+
                 acceso.setParametro("@IdArt", idart);
-                acceso.ejecutarLectura();
+
+                acceso.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                acceso.cerrarConexion();
+            }
+
+        }
+        public void Eliminar(Imagen img)
+        {
+            var acceso = new AccesoBd();
+
+            try
+            {
+                acceso.setQuery("DELETE  FROM Imagenes WHERE IdArticulo = @IdArt and ImagenUrl = @Url");
+
+                acceso.setParametro("@IdArt", img.IdArticulo);
+                acceso.setParametro("@Url", img.UrlImagen);
+
+                acceso.ejecutarAccion();
 
             }
             catch (Exception ex)

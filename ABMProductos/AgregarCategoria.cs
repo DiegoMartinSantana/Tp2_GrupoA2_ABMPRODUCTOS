@@ -33,7 +33,7 @@ namespace ABMProductos
                 var gestionCat = new CategoriaGestion();
                 var aux = new Categoria() { Descripcion = txtNombre.Text };
                 gestionCat.Add(aux);
-
+                MessageBox.Show("La categoria se ha añadido correctamente!");
 
             }
             catch (Exception)
@@ -41,7 +41,7 @@ namespace ABMProductos
 
                 MessageBox.Show("Ha ocurrido un error. Reintente nuevamente mas tarde.");
             }
-
+            this.Close();
 
         }
 
